@@ -15,4 +15,9 @@ class HomeController extends Controller
     {
         return view('site.pages.about');
     }
+
+    public function dashboard()
+    {
+        return view('admin.home');
+    }
 }

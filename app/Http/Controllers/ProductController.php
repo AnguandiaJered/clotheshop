@@ -11,7 +11,7 @@ class ProductController extends Controller
         return view('site.pages.products.products');
     }
 
-    public function product_detail()
+    public function detail()
     {
         return view('site.pages.products.product_detail');
     }
