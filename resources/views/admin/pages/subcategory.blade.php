@@ -35,20 +35,20 @@
                             <div role="document" class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des galleries</h5>
+                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des categories</h5>
                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                     </div>
                                     <div class="modal-body col-md-12">
-                                        <form id="forme" method="POST" action="{{ route('gallerie.store')}}" class="form-horizontal col-md-12" autocomplete="off">
+                                        <form id="forme" method="POST" action="{{ route('categorie.store')}}" class="form-horizontal col-md-12" autocomplete="off">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12 mt-3">
                                                     <div class="form-group">
-                                                        <label for="name">Entré nom</label>
+                                                        <label for="nom">Entré nom</label>
                                                         <input type="text" class="form-control" name='name' required />
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="slug">Entré slug</label>
+                                                        <label for="moderateur">Entré le slug</label>
                                                         <input type="text" class="form-control" name='slug' required />
                                                     </div>
                                                 </div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Liste des nos galleries</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Liste des nos clients</h6>
                         </div>
 
                         <div class="card-body">
@@ -77,45 +77,41 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Name</th>
+                                            <th>Nom</th>
                                             <th>Slug</th>
-                                            <th>Created_by</th>
-                                            <th>Published</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Name</th>
+                                            <th>Nom</th>
                                             <th>Slug</th>
-                                            <th>Created_by</th>
-                                            <th>Published</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($gallery as $item)
+                                    @foreach ($categories as $item)
                                         <div id="edit{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                                             <div role="document" class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des galleries</h5>
+                                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des clients</h5>
                                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                                     </div>
                                                     <div class="modal-body col-md-12">
-                                                        <form id="forme" method="POST" action="{{ route('gallerie.update')}}" class="form-horizontal col-md-12" autocomplete="off">
+                                                        <form id="forme" method="POST" action="{{ route('categorie.update')}}" class="form-horizontal col-md-12" autocomplete="off">
                                                             @csrf
                                                             <input type="hidden" name="id" id="id" value="{{$item->id}}" class="form-control" required />
                                                             <div class="row">
                                                                 <div class="col-md-12 mt-3">
                                                                     <div class="form-group">
-                                                                        <label for="nom">Entré nom</label>
+                                                                        <label for="name">Entré nom</label>
                                                                         <input type="text" class="form-control" value="{{$item->name}}" name='name' required />
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="moderateur">Entré slug</label>
-                                                                        <input type="text" class="form-control" value="{{$item->slug}}" name='slug' required />
+                                                                        <label for="slug">Entré le slug</label>
+                                                                        <input type="text" class="form-control" name='slug' value="{{$item->slug}}" required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -141,11 +137,9 @@
                                             <td>{{$item->id}}</td>
                                             <td>{{$item->name}}</td>
                                             <td>{{$item->slug}}</td>
-                                            <td>{{$item->created_by}}</td>
-                                            <td>{{$item->published}}</td>
                                             <td>
-                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/congopeacenetwork/gallerie/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
-                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/congopeacenetwork/gallerie/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
+                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/congopeacenetwork/categorie/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
+                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/congopeacenetwork/categorie/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -175,6 +169,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
 
     @include('layouts.partials.scripts')
 

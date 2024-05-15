@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\Role;
 use DB;
 
-class CategoryController extends Controller
+class RoleController extends Controller
 {
-/**
+    /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::orderBy('id','desc')->paginate(5);
-        return view('admin.pages.categorie', compact('categories'));
+        $role = Role::orderBy('id','desc')->paginate(5);
+        return view('admin.pages.role', compact('role'));
     }
 
     /**
@@ -31,16 +31,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'slug' => 'required'
+            'name' => 'required'
         ]);
 
-        $categories = new Category();
-        $categories->name=$request->input('name');
-        $categories->slug=$request->input('slug');
-        $categories->save();
+        $role = new Role();
+        $role->name=$request->input('name');
+        $role->save();
 
-        return redirect(route('categorie.index'))->with([
+        return redirect(route('role.index'))->with([
             'message' => 'Successfully saved.!',
             'alert-type' => 'success',
         ]);
@@ -51,8 +49,8 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        $categories = Category::findOrFail($id);
-        return view('admin.pages.categorie', compact('categories'));
+        $role=Role::findOrFail($id);
+        return view('admin.pages.role', compact('role'));
     }
 
     /**
@@ -60,8 +58,8 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        $categories = Category::findOrFail($id);
-        return view('admin.pages.categorie', compact('categories'));
+        $role=Role::findOrFail($id);
+        return view('admin.pages.role', compact('role'));
     }
 
     /**
@@ -70,13 +68,15 @@ class CategoryController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name' => 'sometimes|string',
-            'slug' => 'sometimes|string'
+            'name' => 'sometimes|string'
         ]);
 
-        DB::update("UPDATE categories set name = ?, slug = ? WHERE id= ? ", [$request->name,$request->slug,$request->id]);
+        // $role = Role::findOrFail($id);
+        // $role->name=$request->input('name');
+        // $role->save();
+        DB::update("UPDATE roles set name = ? WHERE id= ? ", [$request->name,$request->id]);
 
-        return redirect(route('categorie.index'))->with([
+        return redirect(route('role.index'))->with([
             'message' => 'Successfully updated.!',
             'alert-type' => 'success',
         ]);
@@ -87,8 +87,8 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        Category::find($id)->delete();
-        return redirect(route('categorie.index'))->with([
+        Role::find($id)->delete();
+        return redirect(route('role.index'))->with([
             'message' => 'Successfully deleted.!',
             'alert-type' => 'success',
         ]);

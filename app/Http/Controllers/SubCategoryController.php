@@ -8,7 +8,7 @@ use DB;
 
 class SubCategoryController extends Controller
 {
- /**
+    /**
      * Display a listing of the resource.
      */
     public function index()
@@ -77,7 +77,7 @@ class SubCategoryController extends Controller
             'category_id' => 'sometimes|string'
         ]);
 
-        DB::update("UPDATE sub_categories set name = ?, slug = ? WHERE id= ? ", [$request->name,$request->slug,$request->category_id,$request->id]);
+        DB::update("UPDATE sub_categories set name = ?, slug = ?, category_id = ? WHERE id= ? ", [$request->name,$request->slug,$request->category_id,$request->id]);
 
         return redirect(route('subcategorie.index'))->with([
             'message' => 'Successfully updated.!',

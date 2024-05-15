@@ -4,6 +4,7 @@
 <head>
 
     @include('layouts.partials.header')
+
 </head>
 
 <body id="page-top">
@@ -30,11 +31,11 @@
 
                     <!-- DataTales Example -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="" target="_blank" rel="noopener noreferrer" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Liste des candidatures</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Liste des messages</h6>
                         </div>
 
                         <div class="card-body">
@@ -43,54 +44,40 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Nom</th>
+                                            <th>Name</th>
                                             <th>Email</th>
-                                            <th>Residence</th>
-                                            <th>Contact</th>
-                                            <th>Genre</th>
-                                            <th>Date naissance</th>
-                                            <th>Langue</th>
-                                            <th>Etudes</th>
-                                            <th>Motivation</th>
-                                            <th>CV</th>
-                                            <th>Action</th>
+                                            <th>Subject</th>
+                                            <th>Message</th>
+                                            <th>created_at</th>
+                                            <!-- <th>Action</th> -->
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Nom</th>
+                                            <th>Name</th>
                                             <th>Email</th>
-                                            <th>Residence</th>
-                                            <th>Contact</th>
-                                            <th>Genre</th>
-                                            <th>Date naissance</th>
-                                            <th>Langue</th>
-                                            <th>Etudes</th>
-                                            <th>Motivation</th>
-                                            <th>CV</th>
-                                            <th>Action</th>
+                                            <th>Subject</th>
+                                            <th>Message</th>
+                                            <th>created_at</th>
+                                            <!-- <th>Action</th> -->
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        @foreach ($message as $item)
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                                <a data-toggle="modal" data-target="#edit" href="" .$id><i class="fa fa-edit"></i></a>
-                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
-                                            </td>
+                                            <td>{{$item->id}}</td>
+                                            <td>{{$item->name}}</td>
+                                            <td>{{$item->email}}</td>
+                                            <td>{{$item->subject}}</td>
+                                            <td>{{$item->message}}</td>
+                                            <td>{{$item->created_at}}</td>
+                                            <!-- <td>
+                                                <a data-toggle="modal" data-target="#edit" href="".$id><i class="fa fa-edit"></i></a>
+                                                <a onclick= "return (confirm(' Voulez-vous supprimer vraiment cette information ?'));"  href="" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
+                                            </td> -->
                                         </tr>
-
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

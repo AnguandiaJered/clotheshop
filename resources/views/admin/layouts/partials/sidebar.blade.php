@@ -36,10 +36,9 @@
              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                  <div class="bg-white py-2 collapse-inner rounded">
                      <h6 class="collapse-header">Applications:</h6>
-                     <a class="collapse-item" href="#">Categories</a>
-                     <a class="collapse-item" href="#">Blog</a>
-                     <a class="collapse-item" href="#">Slide</a>
-                     <a class="collapse-item" href="#">Service</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/category')}}">Categories</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/subcategory')}}">SubCategories</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/blog')}}">Blog</a>
                  </div>
              </div>
          </li>
@@ -53,10 +52,9 @@
              <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                  <div class="bg-white py-2 collapse-inner rounded">
                      <h6 class="collapse-header">Nos opérations:</h6>
-                     <a class="collapse-item" href="#">Gallerie</a>
-                     <a class="collapse-item" href="#">Image</a>
-                     <a class="collapse-item" href="#">Messages</a>
-                     <a class="collapse-item" href="#">Projets</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/product')}}">Products</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/commande')}}">Commande</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/comment')}}">Commentaire</a>
                  </div>
              </div>
          </li>
@@ -66,21 +64,21 @@
 
          <!-- Heading -->
          <div class="sidebar-heading">
-             Project & Testimonial
+             E-commerce
          </div>
 
          <!-- Nav Item - Pages Collapse Menu -->
          <li class="nav-item">
              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                  <i class="fas fa-fw fa-table"></i>
-                 <span>Newsletter</span>
+                 <span>E-commerce</span>
              </a>
              <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                  <div class="bg-white py-2 collapse-inner rounded">
-                     <h6 class="collapse-header">Newsletter:</h6>
-                     <a class="collapse-item" href="#">Partenaire</a>
-                     <a class="collapse-item" href="#">Testimonial</a>
-                     <a class="collapse-item" href="#">Teachers</a>
+                     <h6 class="collapse-header">E-commerce:</h6>
+                     <a class="collapse-item" href="{{ url('/etsyetu/message')}}">Messages</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/testimonial')}}">Testimonial</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/slide')}}">Slide</a>
                      <div class="collapse-divider"></div>
                  </div>
              </div>
@@ -98,9 +96,9 @@
              <div id="collapseAdmin" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                  <div class="bg-white py-2 collapse-inner rounded">
                      <h6 class="collapse-header">Nos paramètres</h6>
-                     <a class="collapse-item" href="#">Role</a>
-                     <a class="collapse-item" href="#">Users</a>
-                     <a class="collapse-item" href="#">Entreprise</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/role')}}">Role</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/users')}}">Users</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/company')}}">Entreprise</a>
                      <div class="collapse-divider"></div>
                  </div>
              </div>
