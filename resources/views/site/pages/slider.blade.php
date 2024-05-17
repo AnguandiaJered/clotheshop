@@ -41,7 +41,7 @@
                                 Unique Furniture Style Design for Your
                                 Family
                             </p>
-                            <a href="{{ route('product_detail')}}" class="btn btn-primary btn-hover-dark btn-margin">purchase now</a>
+                            <a href="{{ route('product.detail')}}" class="btn btn-primary btn-hover-dark btn-margin">purchase now</a>
                         </div>
                         <!-- Slider Content End -->
 
@@ -65,7 +65,7 @@
                                 Unique Furniture Style Design for Your
                                 Family
                             </p>
-                            <a href="{{ route('product_detail')}}" class="btn btn-primary btn-hover-dark btn-margin">purchase now</a>
+                            <a href="{{ route('product.detail')}}" class="btn btn-primary btn-hover-dark btn-margin">purchase now</a>
                         </div>
                         <!-- Slider Content End -->
 

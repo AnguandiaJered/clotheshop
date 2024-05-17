@@ -36,7 +36,7 @@
                             <div class="col-md-6">
                                 <!-- Single Blog Start -->
                                 <div class="single-blog">
-                                    <a href="{{ route('blog_detail')}}"><img src="{{ asset('assets/assets/images/blog/blog-01.jpg')}}" alt="Blog" /></a>
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-01.jpg')}}" alt="Blog" /></a>
 
                                     <div class="blog-content">
                                         <ul class="blog-meta">
@@ -47,9 +47,9 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h4 class="title">
-                                            <a href="{{ route('blog_detail')}}">Unique products that will impress your home.</a>
+                                            <a href="{{ route('blog.show')}}">Unique products that will impress your home.</a>
                                         </h4>
-                                        <a href="{{ route('blog_detail')}}" class="btn btn-dark btn-hover-primary">Read More</a>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Read More</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog End -->
@@ -61,17 +61,17 @@
                                         <div class="swiper-container">
                                             <div class="swiper-wrapper">
                                                 <div class="blog-image swiper-slide">
-                                                    <a href="{{ route('blog_detail')}}">
+                                                    <a href="{{ route('blog.show')}}">
                                                         <img src="{{ asset('assets/assets/images/blog/blog-03.jpg')}}" alt="" />
                                                     </a>
                                                 </div>
                                                 <div class="blog-image swiper-slide">
-                                                    <a href="{{ route('blog_detail')}}">
+                                                    <a href="{{ route('blog.show')}}">
                                                         <img src="{{ asset('assets/assets/images/blog/blog-09.jpg')}}" alt="" />
                                                     </a>
                                                 </div>
                                                 <div class="blog-image swiper-slide">
-                                                    <a href="{{ route('blog_detail')}}">
+                                                    <a href="{{ route('blog.show')}}">
                                                         <img src="{{ asset('assets/assets/images/blog/blog-07.jpg')}}" alt="" />
                                                     </a>
                                                 </div>
@@ -95,10 +95,10 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h4 class="title">
-                                            <a href="{{ route('blog_detail')}}">Interior designer Nancy, the witch of the unique
+                                            <a href="{{ route('blog.show')}}">Interior designer Nancy, the witch of the unique
                                                 space.</a>
                                         </h4>
-                                        <a href="{{ route('blog_detail')}}" class="btn btn-dark btn-hover-primary">Read More</a>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Read More</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog End -->
@@ -121,9 +121,9 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h4 class="title">
-                                            <a href="{{ route('blog_detail')}}">Decorate your home with the most modern furnishings.</a>
+                                            <a href="{{ route('blog.show')}}">Decorate your home with the most modern furnishings.</a>
                                         </h4>
-                                        <a href="{{ route('blog_detail')}}" class="btn btn-dark btn-hover-primary">Read More</a>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Read More</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog End -->
@@ -131,7 +131,7 @@
                             <div class="col-md-6">
                                 <!-- Single Blog Start -->
                                 <div class="single-blog">
-                                    <a href="{{ route('blog_detail')}}"><img src="{{ asset('assets/assets/images/blog/blog-04.jpg')}}" alt="Blog" /></a>
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-04.jpg')}}" alt="Blog" /></a>
 
                                     <div class="blog-content">
                                         <ul class="blog-meta">
@@ -142,9 +142,9 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h4 class="title">
-                                            <a href="{{ route('blog_detail')}}">Spatialize with decorations of the Furns store.</a>
+                                            <a href="{{ route('blog.show')}}">Spatialize with decorations of the Furns store.</a>
                                         </h4>
-                                        <a href="{{ route('blog_detail')}}" class="btn btn-dark btn-hover-primary">Read More</a>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Read More</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog End -->
@@ -152,7 +152,7 @@
                             <div class="col-md-6">
                                 <!-- Single Blog Start -->
                                 <div class="single-blog">
-                                    <a href="{{ route('blog_detail')}}"><img src="{{ asset('assets/assets/images/blog/blog-06.jpg')}}" alt="Blog" /></a>
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-06.jpg')}}" alt="Blog" /></a>
 
                                     <div class="blog-content">
                                         <ul class="blog-meta">
@@ -163,10 +163,10 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h4 class="title">
-                                            <a href="{{ route('blog_detail')}}">Interior designer Nancy, the witch of the unique
+                                            <a href="{{ route('blog.show')}}">Interior designer Nancy, the witch of the unique
                                                 space.</a>
                                         </h4>
-                                        <a href="{{ route('blog_detail')}}" class="btn btn-dark btn-hover-primary">Read More</a>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Read More</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog End -->
@@ -189,10 +189,10 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h4 class="title">
-                                            <a href="{{ route('blog_detail')}}">Best desks that are stylish and functional with storage
+                                            <a href="{{ route('blog.show')}}">Best desks that are stylish and functional with storage
                                                 space.</a>
                                         </h4>
-                                        <a href="{{ route('blog_detail')}}" class="btn btn-dark btn-hover-primary">Read More</a>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Read More</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog End -->
@@ -200,7 +200,7 @@
                             <div class="col-md-6">
                                 <!-- Single Blog Start -->
                                 <div class="single-blog">
-                                    <a href="{{ route('blog_detail')}}"><img src="{{ asset('assets/assets/images/blog/blog-09.jpg')}}" alt="Blog" /></a>
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-09.jpg')}}" alt="Blog" /></a>
 
                                     <div class="blog-content">
                                         <ul class="blog-meta">
@@ -211,10 +211,10 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h4 class="title">
-                                            <a href="{{ route('blog_detail')}}">10 best extendable dining tables to suit your dinner
+                                            <a href="{{ route('blog.show')}}">10 best extendable dining tables to suit your dinner
                                                 party needs.</a>
                                         </h4>
-                                        <a href="{{ route('blog_detail')}}" class="btn btn-dark btn-hover-primary">Read More</a>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Read More</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog End -->
@@ -222,7 +222,7 @@
                             <div class="col-md-6">
                                 <!-- Single Blog Start -->
                                 <div class="single-blog">
-                                    <a href="{{ route('blog_detail')}}"><img src="{{ asset('assets/assets/images/blog/blog-02.jpg')}}" alt="Blog" /></a>
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-02.jpg')}}" alt="Blog" /></a>
 
                                     <div class="blog-content">
                                         <ul class="blog-meta">
@@ -233,10 +233,10 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h4 class="title">
-                                            <a href="{{ route('blog_detail')}}">Digital technologies are improving and growing the
+                                            <a href="{{ route('blog.show')}}">Digital technologies are improving and growing the
                                                 design industry.</a>
                                         </h4>
-                                        <a href="{{ route('blog_detail')}}" class="btn btn-dark btn-hover-primary">Read More</a>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Read More</a>
                                     </div>
                                 </div>
                                 <!-- Single Blog End -->
@@ -307,7 +307,7 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h5 class="title">
-                                            <a href="{{ route('blog_detail')}}">Digital technologies are improving and growing the design
+                                            <a href="{{ route('blog.show')}}">Digital technologies are improving and growing the design
                                                 industry.</a>
                                         </h5>
                                     </div>
@@ -316,7 +316,7 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h5 class="title">
-                                            <a href="{{ route('blog_detail')}}">Interior designer Nancy, the witch of the unique space.</a>
+                                            <a href="{{ route('blog.show')}}">Interior designer Nancy, the witch of the unique space.</a>
                                         </h5>
                                     </div>
                                     <div class="single-recent-post">
@@ -324,7 +324,7 @@
                                             <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
                                         </ul>
                                         <h5 class="title">
-                                            <a href="{{ route('blog_detail')}}">Decorate your home with the most modern furnishings.</a>
+                                            <a href="{{ route('blog.show')}}">Decorate your home with the most modern furnishings.</a>
                                         </h5>
                                     </div>
                                 </div>

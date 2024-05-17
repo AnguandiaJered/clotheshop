@@ -74,10 +74,10 @@
                                             <div class="swiper-slide">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product">
-                                                    <a href="{{ route('product_detail')}}"><img src="{{ asset('assets/assets/images/product/product-01.jpg')}}" width="270" height="303" alt="product" /></a>
+                                                    <a href="{{ route('product.detail')}}"><img src="{{ asset('assets/assets/images/product/product-01.jpg')}}" width="270" height="303" alt="product" /></a>
                                                     <div class="product-content">
                                                         <h4 class="title">
-                                                            <a href="{{ route('product_detail')}}">Elona
+                                                            <a href="{{ route('product.detail')}}">Elona
                                                                 bedside
                                                                 grey
                                                                 table</a>
@@ -111,10 +111,10 @@
                                             <div class="swiper-slide">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product">
-                                                    <a href="{{ route('product_detail')}}"><img src="{{ asset('assets/assets/images/product/product-02.jpg')}}" width="270" height="303" alt="product" /></a>
+                                                    <a href="{{ route('product.detail')}}"><img src="{{ asset('assets/assets/images/product/product-02.jpg')}}" width="270" height="303" alt="product" /></a>
                                                     <div class="product-content">
                                                         <h4 class="title">
-                                                            <a href="{{ route('product_detail')}}">Simple
+                                                            <a href="{{ route('product.detail')}}">Simple
                                                                 minimal
                                                                 Chair</a>
                                                         </h4>
@@ -147,10 +147,10 @@
                                             <div class="swiper-slide">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product">
-                                                    <a href="{{ route('product_detail')}}"><img src="{{ asset('assets/assets/images/product/product-03.jpg')}}" width="270" height="303" alt="product" /></a>
+                                                    <a href="{{ route('product.detail')}}"><img src="{{ asset('assets/assets/images/product/product-03.jpg')}}" width="270" height="303" alt="product" /></a>
                                                     <div class="product-content">
                                                         <h4 class="title">
-                                                            <a href="{{ route('product_detail')}}">
+                                                            <a href="{{ route('product.detail')}}">
                                                                 Pendant
                                                                 Chandelier
                                                                 Light</a>
@@ -190,10 +190,10 @@
                                             <div class="swiper-slide">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product">
-                                                    <a href="{{ route('product_detail')}}"><img src="{{ asset('assets/assets/images/product/product-04.jpg')}}" width="270" height="303" alt="product" /></a>
+                                                    <a href="{{ route('product.detail')}}"><img src="{{ asset('assets/assets/images/product/product-04.jpg')}}" width="270" height="303" alt="product" /></a>
                                                     <div class="product-content">
                                                         <h4 class="title">
-                                                            <a href="{{ route('product_detail')}}">High
+                                                            <a href="{{ route('product.detail')}}">High
                                                                 quality
                                                                 vase
                                                                 bottle</a>
@@ -227,10 +227,10 @@
                                             <div class="swiper-slide">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product">
-                                                    <a href="{{ route('product_detail')}}"><img src="{{ asset('assets/assets/images/product/product-05.jpg')}}" width="270" height="303" alt="product" /></a>
+                                                    <a href="{{ route('product.detail')}}"><img src="{{ asset('assets/assets/images/product/product-05.jpg')}}" width="270" height="303" alt="product" /></a>
                                                     <div class="product-content">
                                                         <h4 class="title">
-                                                            <a href="{{ route('product_detail')}}">Living
+                                                            <a href="{{ route('product.detail')}}">Living
                                                                 &
                                                                 Bedroom
                                                                 Chair</a>
@@ -264,10 +264,10 @@
                                             <div class="swiper-slide">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product">
-                                                    <a href="{{ route('product_detail')}}"><img src="{{ asset('assets/assets/images/product/product-06.jpg')}}" width="270" height="303" alt="product" /></a>
+                                                    <a href="{{ route('product.detail')}}"><img src="{{ asset('assets/assets/images/product/product-06.jpg')}}" width="270" height="303" alt="product" /></a>
                                                     <div class="product-content">
                                                         <h4 class="title">
-                                                            <a href="{{ route('product_detail')}}">Herman
+                                                            <a href="{{ route('product.detail')}}">Herman
                                                                 Arm Grey
                                                                 Chair</a>
                                                         </h4>
@@ -306,10 +306,10 @@
                                             <div class="swiper-slide">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product">
-                                                    <a href="{{ route('product_detail')}}"><img src="{{ asset('assets/assets/images/product/product-07.jpg')}}" width="270" height="303" alt="product" /></a>
+                                                    <a href="{{ route('product.detail')}}"><img src="{{ asset('assets/assets/images/product/product-07.jpg')}}" width="270" height="303" alt="product" /></a>
                                                     <div class="product-content">
                                                         <h4 class="title">
-                                                            <a href="{{ route('product_detail')}}">Wooden
+                                                            <a href="{{ route('product.detail')}}">Wooden
                                                                 decorations</a>
                                                         </h4>
                                                         <div class="price">
@@ -341,10 +341,10 @@
                                             <div class="swiper-slide">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product">
-                                                    <a href="{{ route('product_detail')}}"><img src="{{ asset('assets/assets/images/product/product-08.jpg')}}" width="270" height="303" alt="product" /></a>
+                                                    <a href="{{ route('product.detail')}}"><img src="{{ asset('assets/assets/images/product/product-08.jpg')}}" width="270" height="303" alt="product" /></a>
                                                     <div class="product-content">
                                                         <h4 class="title">
-                                                            <a href="{{ route('product_detail')}}">Herman
+                                                            <a href="{{ route('product.detail')}}">Herman
                                                                 Seater
                                                                 Sofa</a>
                                                         </h4>
@@ -377,10 +377,10 @@
                                             <div class="swiper-slide">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product">
-                                                    <a href="{{ route('product_detail')}}"><img src="{{ asset('assets/assets/images/product/product-09.jpg')}}" width="270" height="303" alt="product" /></a>
+                                                    <a href="{{ route('product.detail')}}"><img src="{{ asset('assets/assets/images/product/product-09.jpg')}}" width="270" height="303" alt="product" /></a>
                                                     <div class="product-content">
                                                         <h4 class="title">
-                                                            <a href="{{ route('product_detail')}}">Reece
+                                                            <a href="{{ route('product.detail')}}">Reece
                                                                 Seater
                                                                 Sofa</a>
                                                         </h4>

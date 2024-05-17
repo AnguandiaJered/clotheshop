@@ -10,11 +10,11 @@
                         <div class="products-banner-content">
                             <div class="banner-content-wrapper">
                                 <h4 class="title">
-                                    <a href="{{ route('product_detail')}}">Drawing Furniture</a>
+                                    <a href="{{ route('product.detail')}}">Drawing Furniture</a>
                                 </h4>
                                 <span class="products-count"
                                         >15 Products</span>
-                                <a href="{{ route('product_detail')}}" class="arrow"><i class="pe-7s-angle-right"></i></a>
+                                <a href="{{ route('product.detail')}}" class="arrow"><i class="pe-7s-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -28,11 +28,11 @@
                         <div class="products-banner-content">
                             <div class="banner-content-wrapper">
                                 <h4 class="title">
-                                    <a href="{{ route('product_detail')}}">Drawing Furniture</a>
+                                    <a href="{{ route('product.detail')}}">Drawing Furniture</a>
                                 </h4>
                                 <span class="products-count"
                                         >15 Products</span>
-                                <a href="{{ route('product_detail')}}" class="arrow"><i class="pe-7s-angle-right"></i></a>
+                                <a href="{{ route('product.detail')}}" class="arrow"><i class="pe-7s-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -46,11 +46,11 @@
                         <div class="products-banner-content">
                             <div class="banner-content-wrapper">
                                 <h4 class="title">
-                                    <a href="{{ route('product_detail')}}">Drawing Furniture</a>
+                                    <a href="{{ route('product.detail')}}">Drawing Furniture</a>
                                 </h4>
                                 <span class="products-count"
                                         >15 Products</span>
-                                <a href="{{ route('product_detail')}}" class="arrow"><i class="pe-7s-angle-right"></i></a>
+                                <a href="{{ route('product.detail')}}" class="arrow"><i class="pe-7s-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -64,11 +64,11 @@
                         <div class="products-banner-content">
                             <div class="banner-content-wrapper">
                                 <h4 class="title">
-                                    <a href="{{ route('product_detail')}}">Drawing Furniture</a>
+                                    <a href="{{ route('product.detail')}}">Drawing Furniture</a>
                                 </h4>
                                 <span class="products-count"
                                         >15 Products</span>
-                                <a href="{{ route('product_detail')}}" class="arrow"><i class="pe-7s-angle-right"></i></a>
+                                <a href="{{ route('product.detail')}}" class="arrow"><i class="pe-7s-angle-right"></i></a>
                             </div>
                         </div>
                     </div>

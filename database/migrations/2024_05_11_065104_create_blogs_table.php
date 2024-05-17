@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
             $table->boolean('featured')->default(0);
+            $table->timestamps();
         });
     }
 

@@ -12,22 +12,8 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
-    public function blog()
-    {
-        return view('site.pages.blog');
-    }
 
-    public function detail()
-    {
-        return view('site.pages.blog_detail');
-    }
-
-    public function comment()
-    {
-        return view('site.pages.blog_detail');
-    }
-
-    public function comments(Request $request)
+    public function comment(Request $request)
     {
         $request->validate([
             'name' => 'required',
@@ -44,13 +30,13 @@ class BlogController extends Controller
 
         $comment->save();
 
-        return redirect(route('blog_detail'))->with([
+        return redirect(route('blog.show'))->with([
             'message' => 'Votre commentaire a bien été envoyé !',
             'alert-type' => 'success',
         ]);
     }
 
- /**
+    /**
      * Display a listing of the resource.
      */
     public function index()

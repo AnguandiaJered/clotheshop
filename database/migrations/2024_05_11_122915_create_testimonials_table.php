@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('avatar');
             $table->text('description')->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

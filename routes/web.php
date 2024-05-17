@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ HomeController, LoginController, BlogController, ContactController, ProductController};
-use App\Http\Controllers\{ UserController, RoleController, SlideController};
+use App\Http\Controllers\{ LoginController, RoleController, BlogController, HomeController};
+use App\Http\Controllers\{ CategoryController, SubCategoryController, ContactController, ProductController};
+use App\Http\Controllers\{ UserController, PostController, SlideController, TestimonialController};
 
 
 /*
@@ -63,6 +64,38 @@ Route::group(['prefix' => 'etsyetu'], function () {
         Route::get('/slide/{id}', 'destroy')->name('slide.destroy');
     });
 
+    Route::controller(BlogController::class)->group(function () {
+        Route::get('/blog', 'index')->name('blog.index');
+        Route::post('/blog', 'store')->name('blog.store');
+        Route::get('/blog/{id}', 'edit')->name('blog.edit');
+        Route::post('/blog/update', 'update')->name('blog.update');
+        Route::get('/blog/{id}', 'destroy')->name('blog.destroy');
+    });
+
+    Route::controller(CategoryController::class)->group(function () {
+        Route::get('/categorie', 'index')->name('categorie.index');
+        Route::post('/categorie', 'store')->name('categorie.store');
+        Route::get('/categorie/{id}', 'edit')->name('categorie.edit');
+        Route::post('/categorie/update', 'update')->name('categorie.update');
+        Route::get('/categorie/{id}', 'destroy')->name('categorie.destroy');
+    });
+
+    Route::controller(SubCategoryController::class)->group(function () {
+        Route::get('/subcategorie', 'index')->name('subcategorie.index');
+        Route::post('/subcategorie', 'store')->name('subcategorie.store');
+        Route::get('/subcategorie/{id}', 'edit')->name('subcategorie.edit');
+        Route::post('/subcategorie/update', 'update')->name('subcategorie.update');
+        Route::get('/subcategorie/{id}', 'destroy')->name('subcategorie.destroy');
+    });
+
+    Route::controller(TestimonialController::class)->group(function () {
+        Route::get('/testimonial', 'index')->name('testimonial.index');
+        Route::post('/testimonial', 'store')->name('testimonial.store');
+        Route::get('/testimonial/{id}', 'edit')->name('testimonial.edit');
+        Route::post('/testimonial/update', 'update')->name('testimonial.update');
+        Route::get('/testimonial/{id}', 'destroy')->name('testimonial.destroy');
+    });
+
 });
 
 
@@ -70,22 +103,20 @@ Route::group(['prefix' => 'etsyetu'], function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('/contact', [ContactController::class, 'message'])->name('contact');
     Route::post('/contact', [ContactController::class, 'contact'])->name('contact.contact');
-    Route::get('/comment', [ContactController::class, 'comment'])->name('comment');
-    Route::post('/comments', [ContactController::class, 'comments'])->name('contact.comments');
     Route::get('/about', [HomeController::class, 'about'])->name('about');
 
     Route::group(['prefix' => 'blog'], function () {
-        Route::get('/', [BlogController::class,'blog'])->name('blog');
-        Route::get('/detail', [BlogController::class,'detail'])->name('blog_detail');
-        Route::get('/{y}/{m}/{d}/{slug}', [BlogController::class, 'show'])->name('blog.show');
-        Route::get('/category/{slug}', [BlogController::class, 'sortByCategory'])->name('blog.category');
-        Route::get('/search', [BlogController::class, 'search'])->name('search');
-        Route::get('/presse', [BlogController::class, 'presse'])->name('presse');
+        Route::get('/',[PostController::class, 'index'])->name('blog');
+        Route::get('/{y}/{m}/{d}/{slug}', [PostController::class, 'show'])->name('blog.show');
+        Route::post('/{y}/{m}/{d}/{slug}', [ContactController::class, 'comment'])->name('comment');
+        Route::get('/category/{slug}', [PostController::class, 'sortByCategory'])->name('blog.category');
+        Route::get('/search', [PostController::class, 'search'])->name('search');
+        Route::get('/presse', [PostController::class, 'presse'])->name('presse');
     });
 
     Route::group(['prefix' => 'product'], function () {
         Route::get('/', [ProductController::class,'product'])->name('product');
-        Route::get('/detail', [ProductController::class,'detail'])->name('product_detail');
+        Route::get('/detail', [ProductController::class,'detail'])->name('product.detail');
     });
 
 });

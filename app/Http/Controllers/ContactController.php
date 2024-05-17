@@ -12,6 +12,12 @@ class ContactController extends Controller
         return view('site.pages.contact');
     }
 
+    public function messages()
+    {
+        $message = Message::orderBy('id','desc')->paginate(5);
+        return view('admin.pages.message', compact('message'));
+    }
+
     public function contact(Request $request)
     {
         $request->validate([
