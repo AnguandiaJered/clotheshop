@@ -60,7 +60,7 @@
 
     </div>
 
-    @include('layouts.partials.scripts')pt>
+    @include('layouts.partials.scripts')
 
 </body>
 

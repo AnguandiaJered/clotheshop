@@ -14,7 +14,7 @@ class TestimonialController extends Controller
     public function index()
     {
         $testimonial = Testimonial::latest()->get();
-        return view('admin.pages.testimonial', compact('testimonial'));
+        return view('admin.testimonial', compact('testimonial'));
     }
 
     /**
@@ -60,7 +60,7 @@ class TestimonialController extends Controller
     public function show(string $id)
     {
         $testimonial = Testimonial::findOrFail($id);
-        return view('admin.pages.testimonial', compact('testimonial'));
+        return view('admin.testimonial', compact('testimonial'));
     }
 
     /**
@@ -69,7 +69,7 @@ class TestimonialController extends Controller
     public function edit(string $id)
     {
         $testimonial = Testimonial::findOrFail($id);
-        return view('admin.pages.testimonial', compact('testimonial'));
+        return view('admin.testimonial', compact('testimonial'));
     }
 
     /**

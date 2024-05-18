@@ -94,7 +94,7 @@ class PostController extends Controller
 
           $categories = Category::orderByRaw("RAND()")->limit(5)->get();
 
-          return view('client.front.pages.blog.search', compact(
+          return view('site.pages.blog.search', compact(
               'posts',
               'searchInfo',
               'categories'

@@ -17,7 +17,7 @@ class UserController extends Controller
         $user = User::orderBy('id','desc')->paginate(5);
         // $user = User::latest()->get();
         $role = Role::latest()->get();
-        return view('admin.pages.users', compact('user','role'));
+        return view('admin.users', compact('user','role'));
     }
 
     /**
@@ -63,7 +63,7 @@ class UserController extends Controller
     public function show(string $id)
     {
         $user = User::findOrFail($id);
-        return view('admin.pages.users', compact('user'));
+        return view('admin.users', compact('user'));
     }
 
     /**
@@ -72,7 +72,7 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $user = User::findOrFail($id);
-        return view('admin.pages.users', compact('user'));
+        return view('admin.users', compact('user'));
     }
 
     /**

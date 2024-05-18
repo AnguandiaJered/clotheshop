@@ -35,17 +35,21 @@
                             <div role="document" class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des privilèges</h5>
+                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des categories</h5>
                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                     </div>
                                     <div class="modal-body col-md-12">
-                                        <form id="forme" method="POST" action="{{ route('role.store')}}" class="form-horizontal col-md-12" autocomplete="off">
+                                        <form id="forme" method="POST" action="{{ route('categorie.store')}}" class="form-horizontal col-md-12" autocomplete="off">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12 mt-3">
                                                     <div class="form-group">
-                                                        <label for="nom">Entré privilège</label>
+                                                        <label for="nom">Entré nom</label>
                                                         <input type="text" class="form-control" name='name' required />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="moderateur">Entré le slug</label>
+                                                        <input type="text" class="form-control" name='slug' required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -60,11 +64,11 @@
                     </div>
                     <!-- DataTales Example -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <a href="" target="_blank" rel="noopener noreferrer" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Liste des privilèges d'accès</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Liste des nos clients</h6>
                         </div>
 
                         <div class="card-body">
@@ -73,35 +77,41 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Name</th>
+                                            <th>Nom</th>
+                                            <th>Slug</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Name</th>
+                                            <th>Nom</th>
+                                            <th>Slug</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($role as $item)
+                                    @foreach ($categories as $item)
                                         <div id="edit{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                                             <div role="document" class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des privilèges</h5>
+                                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des clients</h5>
                                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                                     </div>
                                                     <div class="modal-body col-md-12">
-                                                        <form id="forme" method="POST" action="{{ route('role.update')}}" class="form-horizontal col-md-12" autocomplete="off">
+                                                        <form id="forme" method="POST" action="{{ route('categorie.update')}}" class="form-horizontal col-md-12" autocomplete="off">
                                                             @csrf
                                                             <input type="hidden" name="id" id="id" value="{{$item->id}}" class="form-control" required />
                                                             <div class="row">
                                                                 <div class="col-md-12 mt-3">
                                                                     <div class="form-group">
-                                                                        <label for="nom">Entré privilège</label>
+                                                                        <label for="name">Entré nom</label>
                                                                         <input type="text" class="form-control" value="{{$item->name}}" name='name' required />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="slug">Entré le slug</label>
+                                                                        <input type="text" class="form-control" name='slug' value="{{$item->slug}}" required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -126,9 +136,10 @@
                                             </div>
                                             <td>{{$item->id}}</td>
                                             <td>{{$item->name}}</td>
+                                            <td>{{$item->slug}}</td>
                                             <td>
-                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/congopeacenetwork/role/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
-                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/congopeacenetwork/role/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
+                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/etsyetu/categorie/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
+                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/etsyetu/categorie/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -140,6 +151,7 @@
 
                 </div>
                 <!-- /.container-fluid -->
+
             </div>
             <!-- End of Main Content -->
 

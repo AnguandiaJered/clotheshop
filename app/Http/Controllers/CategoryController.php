@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy('id','desc')->paginate(5);
-        return view('admin.pages.categorie', compact('categories'));
+        return view('admin.categorie', compact('categories'));
     }
 
     /**
@@ -52,7 +52,7 @@ class CategoryController extends Controller
     public function show(string $id)
     {
         $categories = Category::findOrFail($id);
-        return view('admin.pages.categorie', compact('categories'));
+        return view('admin.categorie', compact('categories'));
     }
 
     /**
@@ -61,7 +61,7 @@ class CategoryController extends Controller
     public function edit(string $id)
     {
         $categories = Category::findOrFail($id);
-        return view('admin.pages.categorie', compact('categories'));
+        return view('admin.categorie', compact('categories'));
     }
 
     /**

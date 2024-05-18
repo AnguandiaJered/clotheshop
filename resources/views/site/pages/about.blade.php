@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('site.layouts.default')
 
-@include('site.layouts.header')
-
-<body>
-    <!-- Header Start  -->
-    @include('site.layouts.navbar')
-    <!-- off Canvas End -->
-
+@section('content')
     <!-- Page Banner Section Start -->
     <div class="section page-banner-section" style="background-image: url(assets/assets/images/page-banner.jpg)">
         <div class="container">
@@ -250,17 +243,4 @@
     </div>
     <!-- Brand Logo Section End -->
 
-    <!-- Footer Section Start -->
-    @include('site.layouts.footer')
-    <!-- Footer Section End -->
-
-    <!--Back To Start-->
-    <button id="backBtn" class="back-to-top"><i class="pe-7s-angle-up"></i></button>
-    <!--Back To End-->
-    <!-- JS
-    ============================================ -->
-
-    @include('site.layouts.script')
-</body>
-
-</html>
+@endsection

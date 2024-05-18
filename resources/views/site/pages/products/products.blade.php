@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('site.layouts.default')
 
-@include('site.layouts.header')
-
-<body>
-    <!-- Header Start  -->
-
-    @include('site.layouts.navbar')
-
+@section('content')
     <!-- Page Banner Section Start -->
     <div class="section page-banner-section" style="background-image: url(assets/assets/images/page-banner.jpg)">
         <div class="container">
@@ -495,7 +488,7 @@
                                 </div>
                                 <div class="product-content">
                                     <h4 class="title">
-                                        <a href="{{ route('product_detail')}}">Elona bedside grey table</a>
+                                        <a href="{{ route('product.detail')}}">Elona bedside grey table</a>
                                     </h4>
                                     <div class="price">
                                         <span class="sale-price">$40.00</span>
@@ -804,21 +797,4 @@
     </div>
     <!-- Shop Section End -->
 
-    <!-- Footer Section Start -->
-    @include('site.layouts.footer')
-    <!-- Footer Section End -->
-
-    <!--Back To Start-->
-    <button id="backBtn" class="back-to-top"><i class="pe-7s-angle-up"></i></button>
-    <!--Back To End-->
-
-    <!-- JS
-    ============================================ -->
-
-    <!-- Modernizer & jQuery JS -->
-
-    @include('site.layouts.script')
-
-</body>
-
-</html>
+@endsection

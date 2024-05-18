@@ -14,7 +14,7 @@ class SubCategoryController extends Controller
     public function index()
     {
         $subcategories = SubCategory::orderBy('id','desc')->paginate(5);
-        return view('admin.pages.subcategorie', compact('subcategories'));
+        return view('admin.subcategorie', compact('subcategories'));
     }
 
     /**
@@ -54,7 +54,7 @@ class SubCategoryController extends Controller
     public function show(string $id)
     {
         $subcategories = SubCategory::findOrFail($id);
-        return view('admin.pages.subcategorie', compact('subcategories'));
+        return view('admin.subcategorie', compact('subcategories'));
     }
 
     /**
@@ -63,7 +63,7 @@ class SubCategoryController extends Controller
     public function edit(string $id)
     {
         $subcategories = SubCategory::findOrFail($id);
-        return view('admin.pages.subcategorie', compact('subcategories'));
+        return view('admin.subcategorie', compact('subcategories'));
     }
 
     /**

@@ -79,7 +79,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ route('blog')}}">Blog</a>
+                            <a href="{{ route('blogs')}}">Blog</a>
                         </li>
                         <li><a href="{{ route('contact')}}">Contact</a></li>
                     </ul>

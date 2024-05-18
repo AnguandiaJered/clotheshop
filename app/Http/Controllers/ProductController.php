@@ -28,7 +28,7 @@ class ProductController extends Controller
         $categorie = Category::latest()->get();
         $subcategorie = SubCategory::latest()->get();
         $product = Product::orderBy('id','desc')->paginate(5);
-        return view('admin.pages.product', compact('product','categorie','subcategorie'));
+        return view('admin.product', compact('product','categorie','subcategorie'));
     }
 
     /**
@@ -88,7 +88,7 @@ class ProductController extends Controller
     public function show(string $id)
     {
         $product = Product::findOrFail($id);
-        return view('admin.pages.product', compact('product'));
+        return view('admin.product', compact('product'));
     }
 
     /**
@@ -97,7 +97,7 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $product = Product::findOrFail($id);
-        return view('admin.pages.product', compact('product'));
+        return view('admin.product', compact('product'));
     }
 
     /**

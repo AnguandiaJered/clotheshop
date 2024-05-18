@@ -44,7 +44,7 @@ class BlogController extends Controller
         $user = User::latest()->get();
         $categorie = Category::latest()->get();
         $blog = Blog::orderBy('id','desc')->paginate(5);
-        return view('admin.pages.blog', compact('blog','user','categorie'));
+        return view('admin.blog', compact('blog','user','categorie'));
     }
 
     /**
@@ -98,7 +98,7 @@ class BlogController extends Controller
     public function show(string $id)
     {
         $blog = Blog::findOrFail($id);
-        return view('admin.pages.blog', compact('blog'));
+        return view('admin.blog', compact('blog'));
     }
 
     /**
@@ -107,7 +107,7 @@ class BlogController extends Controller
     public function edit(string $id)
     {
         $blog = Blog::findOrFail($id);
-        return view('admin.pages.blog', compact('blog'));
+        return view('admin.blog', compact('blog'));
     }
 
     /**

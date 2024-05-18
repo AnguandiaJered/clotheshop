@@ -14,7 +14,7 @@ class RoleController extends Controller
     public function index()
     {
         $role = Role::orderBy('id','desc')->paginate(5);
-        return view('admin.pages.role', compact('role'));
+        return view('admin.role', compact('role'));
     }
 
     /**
@@ -50,7 +50,7 @@ class RoleController extends Controller
     public function show(string $id)
     {
         $role=Role::findOrFail($id);
-        return view('admin.pages.role', compact('role'));
+        return view('admin.role', compact('role'));
     }
 
     /**
@@ -59,7 +59,7 @@ class RoleController extends Controller
     public function edit(string $id)
     {
         $role=Role::findOrFail($id);
-        return view('admin.pages.role', compact('role'));
+        return view('admin.role', compact('role'));
     }
 
     /**

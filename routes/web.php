@@ -105,8 +105,8 @@ Route::group(['prefix' => 'etsyetu'], function () {
     Route::post('/contact', [ContactController::class, 'contact'])->name('contact.contact');
     Route::get('/about', [HomeController::class, 'about'])->name('about');
 
-    Route::group(['prefix' => 'blog'], function () {
-        Route::get('/',[PostController::class, 'index'])->name('blog');
+    Route::group(['prefix' => 'blogs'], function () {
+        Route::get('/',[PostController::class, 'index'])->name('blogs');
         Route::get('/{y}/{m}/{d}/{slug}', [PostController::class, 'show'])->name('blog.show');
         Route::post('/{y}/{m}/{d}/{slug}', [ContactController::class, 'comment'])->name('comment');
         Route::get('/category/{slug}', [PostController::class, 'sortByCategory'])->name('blog.category');

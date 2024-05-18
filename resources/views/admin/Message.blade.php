@@ -71,10 +71,6 @@
                                             <td>{{$item->subject}}</td>
                                             <td>{{$item->message}}</td>
                                             <td>{{$item->created_at}}</td>
-                                            <!-- <td>
-                                                <a data-toggle="modal" data-target="#edit" href="".$id><i class="fa fa-edit"></i></a>
-                                                <a onclick= "return (confirm(' Voulez-vous supprimer vraiment cette information ?'));"  href="" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
-                                            </td> -->
                                         </tr>
                                         @endforeach
                                     </tbody>

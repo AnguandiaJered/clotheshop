@@ -26,32 +26,32 @@ class LoginController extends Controller
             $user->verified = true;
             $user->save();
 
-        return view('admin.pages.login');
+        return view('admin.login');
     }
 
     public function login_set()
     {
-        return view('admin.pages.login');
+        return view('admin.login');
     }
 
     public function logout()
     {
-        return view('admin.pages.login');
+        return view('admin.login');
     }
 
     public function forgotpassword()
     {
-        return view('admin.pages.forgot-password');
+        return view('admin.forgot-password');
     }
 
     public function registered()
     {
-        return view('admin.pages.register');
+        return view('admin.register');
     }
 
     public function secure ()
     {
-        return view('admin.pages.secure');
+        return view('admin.secure');
     }
 
     public function login(Request $request)
@@ -63,6 +63,6 @@ class LoginController extends Controller
                 'alert-type' => 'success',
             ]);
         }
-        return view('admin.pages.login');
+        return view('admin.login');
     }
 }

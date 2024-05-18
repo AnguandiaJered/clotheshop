@@ -35,25 +35,53 @@
                             <div role="document" class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des slides</h5>
+                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des blogs</h5>
                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                     </div>
                                     <div class="modal-body col-md-12">
-                                        <form id="forme" method="POST" action="{{ route('slide.store') }}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
+                                        <form id="forme" method="POST" action="{{ route('blog.store')}}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
-                                                <div class="col-md-12 mt-3">
+                                                <div class="col-md-6 mt-3">
                                                     <div class="form-group">
-                                                        <label for="nom">Entré titre</label>
+                                                        <label for="categorie">selectionner la categorie</label>
+                                                        <select class="form-control" name="category_id">
+                                                            <option selected="">Choose...</option>
+                                                            @foreach ($categorie as $items)
+                                                            <option value="{{$items->id}}">{{$items->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="title">Entré titre</label>
                                                         <input type="text" class="form-control" name='title' required />
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="nom">Entré contenu</label>
-                                                        <textarea name="content" id="" cols="30" rows="5" class="form-control"></textarea>
+                                                        <label for="excerpt">Entré detail</label>
+                                                        <textarea name="excerpt" id="excerpt" cols="30" rows="5" class="form-control"></textarea>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="moderateur">Entré l'image</label>
+                                                        <label for="body">Entré detail suite</label>
+                                                        <textarea name="body" id="body" cols="30" rows="5" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mt-3">
+                                                    <div class="form-group">
+                                                        <label for="image">Entré l'image</label>
                                                         <input type="file" class="form-control" name='image' required />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="slug">Entré slug</label>
+                                                        <input type="text" class="form-control" name='slug' required />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="statut">selectionner le status</label>
+                                                        <select class="form-control" name="status">
+                                                            <option selected="">Choose...</option>
+                                                            <option value="PUBLISHED">PUBLISHED</option>
+                                                            <option value="DRAFT">DRAFT</option>
+                                                            <option value="PENDING">PENDING</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -72,7 +100,7 @@
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Liste des nos slides</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Liste des nos blogs</h6>
                         </div>
 
                         <div class="card-body">
@@ -80,50 +108,68 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Id</th>
-                                            <th>Title</th>
-                                            <th>Content</th>
+                                            <th>Utilisateur</th>
+                                            <th>Categorie</th>
+                                            <th>Titre</th>
+                                            <th>Detail</th>
                                             <th>Image</th>
-                                            <th>Active</th>
+                                            <th>Slug</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Id</th>
-                                            <th>Title</th>
-                                            <th>Content</th>
+                                            <th>Utilisateur</th>
+                                            <th>Categorie</th>
+                                            <th>Titre</th>
+                                            <th>Detail</th>
                                             <th>Image</th>
-                                            <th>Active</th>
+                                            <th>Slug</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($slide as $item)
+                                    @foreach ($post as $item)
                                         <div id="edit{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                                             <div role="document" class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des slides</h5>
+                                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des blogs</h5>
                                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                                     </div>
                                                     <div class="modal-body col-md-12">
-                                                        <form id="forme" method="POST" action="{{ route('slide.update')}}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
+                                                        <form id="forme" method="POST" action="{{ route('blog.update')}}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
                                                             @csrf
                                                             <input type="hidden" name="id" id="id" value="{{$item->id}}" class="form-control" required />
                                                             <div class="row">
-                                                                <div class="col-md-12 mt-3">
+                                                                <div class="col-md-6 mt-3">
                                                                     <div class="form-group">
-                                                                        <label for="nom">Entré titre</label>
+                                                                        <label for="categorie">selectionner la categorie</label>
+                                                                        <select class="form-control" name="category_id">
+                                                                            <option value="{{$item->category_id}}">{{$item->category_id}}</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="title">Entré titre</label>
                                                                         <input type="text" class="form-control" value="{{$item->title}}" name='title' required />
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="nom">Entré contenu</label>
-                                                                        <textarea name="content" value="{{$item->content}}" id="" cols="30" rows="5" class="form-control">{{$item->content}}</textarea>
+                                                                        <label for="excerpt">Entré detail</label>
+                                                                        <textarea name="excerpt" id="excerpt" cols="30" rows="5" value="{{$item->excerpt}}" class="form-control">{{$item->excerpt}}</textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 mt-3">
+                                                                    <div class="form-group">
+                                                                        <label for="body">Entré detail suite</label>
+                                                                        <textarea name="body" id="body" cols="30" rows="5" value="{{$item->body}}" class="form-control">{{$item->body}}</textarea>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="moderateur">Entré l'image</label>
+                                                                        <label for="image">Entré l'image</label>
                                                                         <input type="file" class="form-control" value="{{$item->image}}" name='image' required />
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="slug">Entré slug</label>
+                                                                        <input type="text" class="form-control" value="{{$item->slug}}" name='slug' required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -146,14 +192,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <td>{{$item->id}}</td>
+                                            <td>{{$item->author_id}}</td>
+                                            <td>{{$item->category_id}}</td>
                                             <td>{{$item->title}}</td>
-                                            <td>{{$item->content}}</td>
+                                            <td>{{$item->excerpt}}</td>
                                             <td>{{$item->image}}</td>
-                                            <td>{{$item->active}}</td>
+                                            <td>{{$item->slug}}</td>
                                             <td>
-                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/congopeacenetwork/slide/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
-                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/congopeacenetwork/slide/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
+                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/etsyetu/blog/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
+                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/etsyetu/blog/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

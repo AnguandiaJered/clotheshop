@@ -28,35 +28,37 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+
                     <div class="col-md-12 col-sm-12 text-right">
                         <button data-toggle="modal" data-target="#myModal" class="btn btn-primary mt-3 mb-4">Effectuer l'opération</button>
                         <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                             <div role="document" class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des projets</h5>
+                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des sous categories</h5>
                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                     </div>
                                     <div class="modal-body col-md-12">
-                                        <form id="forme" method="POST" action="{{ route('projects.store')}}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
+                                        <form id="forme" method="POST" action="{{ route('subcategorie.store')}}" class="form-horizontal col-md-12" autocomplete="off">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12 mt-3">
+                                                    <div class="form-group">
+                                                        <label for="categorie">selectionner la categorie</label>
+                                                        <select class="form-control" name="category_id">
+                                                            <option selected="">Choose...</option>
+                                                            @foreach ($categorie as $items)
+                                                            <option value="{{$items->id}}">{{$items->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
                                                     <div class="form-group">
                                                         <label for="nom">Entré nom</label>
                                                         <input type="text" class="form-control" name='name' required />
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="moderateur">Entré le secteur</label>
-                                                        <input type="text" class="form-control" name='sector' required />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="moderateur">Entré l'image</label>
-                                                        <input type="file" class="form-control" name='image' required />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="telephone">Entré la description</label>
-                                                        <textarea name="description" id="" cols="30" rows="5" class="form-control"></textarea>
+                                                        <label for="moderateur">Entré le slug</label>
+                                                        <input type="text" class="form-control" name='slug' required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -75,7 +77,7 @@
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Liste des nos services</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Liste des sous categories</h6>
                         </div>
 
                         <div class="card-body">
@@ -84,53 +86,49 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
+                                            <th>Categorie</th>
                                             <th>Nom</th>
-                                            <th>Secteur</th>
-                                            <th>Image</th>
-                                            <th>Description</th>
+                                            <th>Slug</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Id</th>
+                                            <th>Categorie</th>
                                             <th>Nom</th>
-                                            <th>Secteur</th>
-                                            <th>Image</th>
-                                            <th>Description</th>
+                                            <th>Slug</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($project as $item)
+                                    @foreach ($categories as $item)
                                         <div id="edit{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                                             <div role="document" class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des projets</h5>
+                                                        <h5 id="exampleModalLabel" class="modal-title">Paramètrage des clients</h5>
                                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                                     </div>
                                                     <div class="modal-body col-md-12">
-                                                        <form id="forme" method="POST" action="{{ route('projects.update')}}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
+                                                        <form id="forme" method="POST" action="{{ route('categorie.update')}}" class="form-horizontal col-md-12" autocomplete="off">
                                                             @csrf
                                                             <input type="hidden" name="id" id="id" value="{{$item->id}}" class="form-control" required />
                                                             <div class="row">
                                                                 <div class="col-md-12 mt-3">
                                                                     <div class="form-group">
-                                                                        <label for="nom">Entré nom</label>
+                                                                        <label for="categorie">selectionner la categorie</label>
+                                                                        <select class="form-control" name="category_id">
+                                                                            <option value="{{$item->category_id}}">{{$item->category_id}}</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="name">Entré nom</label>
                                                                         <input type="text" class="form-control" value="{{$item->name}}" name='name' required />
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="moderateur">Entré le secteur</label>
-                                                                        <input type="text" class="form-control" name='sector' value="{{$item->sector}}" required />
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="moderateur">Entré l'image</label>
-                                                                        <input type="file" class="form-control" name='image' value="{{$item->image}}" required />
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="telephone">Entré la description</label>
-                                                                        <textarea name="description" value="{{$item->description}}" id="" cols="30" rows="5" class="form-control">{{$item->description}}</textarea>
+                                                                        <label for="slug">Entré le slug</label>
+                                                                        <input type="text" class="form-control" name='slug' value="{{$item->slug}}" required />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -154,13 +152,12 @@
                                                 </div>
                                             </div>
                                             <td>{{$item->id}}</td>
+                                            <td>{{$item->category_id}}</td>
                                             <td>{{$item->name}}</td>
-                                            <td>{{$item->sector}}</td>
-                                            <td>{{$item->image}}</td>
-                                            <td>{{$item->description}}</td>
+                                            <td>{{$item->slug}}</td>
                                             <td>
-                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/congopeacenetwork/projects/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
-                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/congopeacenetwork/projetcs/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
+                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/etsyetu/subcategorie/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
+                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/etsyetu/subcategorie/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

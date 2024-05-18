@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('site.layouts.default')
 
-@include('site.layouts.header')
-
-<body>
-    <!-- Header Start  -->
-    @include('site.layouts.navbar')
-
+@section('content')
     <!-- Slider Section Start -->
     @include('site.pages.slider')
     <!-- Slider Section End -->
@@ -142,22 +136,4 @@
     @include('site.pages.productbanner')
     <!-- Product Banner Section End -->
 
-    <!-- Blog Section Start -->
-    {{-- @include('site.pages.blog') --}}
-    <!-- Blog Section End -->
-
-    @include('site.layouts.footer')
-
-    <!--Back To Start-->
-    <button id="backBtn" class="back-to-top"><i class="pe-7s-angle-up"></i></button>
-    <!--Back To End-->
-
-
-    <!-- JS
-    ============================================ -->
-
-    @include('site.layouts.script')
-
-</body>
-
-</html>
+@endsection

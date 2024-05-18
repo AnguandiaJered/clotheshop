@@ -3,7 +3,7 @@
 
 <head>
 
-@include('admin.layouts.partials.header')
+@include('layouts.partials.header')
 
 </head>
 
@@ -13,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        @include('admin.layouts.partials.sidebar')
+        @include('layouts.partials.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -23,7 +23,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('admin.layouts.partials.navbar')
+                @include('layouts.partials.navbar')
 
                 <!-- End of Topbar -->
 
@@ -35,7 +35,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            @include('admin.layouts.partials.footer')
+            @include('layouts.partials.footer')
             <!-- End of Footer -->
 
         </div>
@@ -51,7 +51,7 @@
 
 
 
-    @include('admin.layouts.partials.scripts')
+    @include('layouts.partials.scripts')
 
 </body>
 

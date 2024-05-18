@@ -2,7 +2,7 @@
      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
          <!-- Sidebar - Brand -->
-         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home')}}">
              <div class="sidebar-brand-icon rotate-n-20">
                  <img class="img-responsive img-thumbnail" src="{{ url('assets/logo.png')}}" style="width: 140px; height: 60px;" alt="Congo Peace Network"/>
              </div>
@@ -14,7 +14,7 @@
 
          <!-- Nav Item - Dashboard -->
          <li class="nav-item active">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="{{ route('home')}}">
                  <i class="fas fa-fw fa-tachometer-alt"></i>
                  <span>Tableau de bord</span></a>
          </li>
@@ -36,8 +36,8 @@
              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                  <div class="bg-white py-2 collapse-inner rounded">
                      <h6 class="collapse-header">Applications:</h6>
-                     <a class="collapse-item" href="{{ url('/etsyetu/category')}}">Categories</a>
-                     <a class="collapse-item" href="{{ url('/etsyetu/subcategory')}}">SubCategories</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/categorie')}}">Categories</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/subcategorie')}}">SubCategories</a>
                      <a class="collapse-item" href="{{ url('/etsyetu/blog')}}">Blog</a>
                  </div>
              </div>
@@ -98,7 +98,6 @@
                      <h6 class="collapse-header">Nos paramètres</h6>
                      <a class="collapse-item" href="{{ url('/etsyetu/role')}}">Role</a>
                      <a class="collapse-item" href="{{ url('/etsyetu/users')}}">Users</a>
-                     <a class="collapse-item" href="{{ url('/etsyetu/company')}}">Entreprise</a>
                      <div class="collapse-divider"></div>
                  </div>
              </div>
