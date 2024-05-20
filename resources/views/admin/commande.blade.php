@@ -64,16 +64,16 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($message as $item)
+
                                         <tr>
-                                            <td>{{$item->id}}</td>
-                                            <td>{{$item->name}}</td>
-                                            <td>{{$item->email}}</td>
-                                            <td>{{$item->subject}}</td>
-                                            <td>{{$item->message}}</td>
-                                            <td>{{$item->created_at}}</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
-                                        @endforeach
+
                                     </tbody>
                                 </table>
                             </div>

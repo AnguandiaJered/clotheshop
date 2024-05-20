@@ -47,7 +47,7 @@
                                                         <label for="categorie">selectionner la categorie</label>
                                                         <select class="form-control" name="category_id">
                                                             <option selected="">Choose...</option>
-                                                            @foreach ($categorie as $items)
+                                                            @foreach ($categories as $items)
                                                             <option value="{{$items->id}}">{{$items->name}}</option>
                                                             @endforeach
                                                         </select>
@@ -111,7 +111,7 @@
                                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                                     </div>
                                                     <div class="modal-body col-md-12">
-                                                        <form id="forme" method="POST" action="{{ route('categorie.update')}}" class="form-horizontal col-md-12" autocomplete="off">
+                                                        <form id="forme" method="POST" action="{{ route('subcategorie.update')}}" class="form-horizontal col-md-12" autocomplete="off">
                                                             @csrf
                                                             <input type="hidden" name="id" id="id" value="{{$item->id}}" class="form-control" required />
                                                             <div class="row">

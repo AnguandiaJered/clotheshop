@@ -38,7 +38,7 @@
                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                     </div>
                                     <div class="modal-body col-md-12">
-                                        <form id="forme" method="POST" action="{{ route('product.store')}}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
+                                        <form id="forme" method="POST" action="{{ route('products.store')}}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-6 mt-3">
@@ -156,7 +156,7 @@
                                                         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                                     </div>
                                                     <div class="modal-body col-md-12">
-                                                        <form id="forme" method="POST" action="{{ route('product.update')}}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
+                                                        <form id="forme" method="POST" action="{{ route('products.update')}}" class="form-horizontal col-md-12" autocomplete="off" enctype="multipart/form-data">
                                                             @csrf
                                                             <input type="hidden" name="id" id="id" value="{{$item->id}}" class="form-control" required />
                                                             <div class="row">
@@ -204,8 +204,8 @@
                                             <td>{{$item->image}}</td>
                                             <td>{{$item->description}}</td>
                                             <td>
-                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/etsyetu/product/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
-                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/etsyetu/product/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
+                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/etsyetu/products/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
+                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/etsyetu/products/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

@@ -2,7 +2,7 @@
      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
          <!-- Sidebar - Brand -->
-         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home')}}">
+         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.home')}}">
              <div class="sidebar-brand-icon rotate-n-20">
                  <img class="img-responsive img-thumbnail" src="{{ url('assets/logo.png')}}" style="width: 140px; height: 60px;" alt="Congo Peace Network"/>
              </div>
@@ -14,7 +14,7 @@
 
          <!-- Nav Item - Dashboard -->
          <li class="nav-item active">
-             <a class="nav-link" href="{{ route('home')}}">
+             <a class="nav-link" href="{{ route('admin.home')}}">
                  <i class="fas fa-fw fa-tachometer-alt"></i>
                  <span>Tableau de bord</span></a>
          </li>
@@ -52,7 +52,7 @@
              <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                  <div class="bg-white py-2 collapse-inner rounded">
                      <h6 class="collapse-header">Nos opérations:</h6>
-                     <a class="collapse-item" href="{{ url('/etsyetu/product')}}">Products</a>
+                     <a class="collapse-item" href="{{ url('/etsyetu/products')}}">Products</a>
                      <a class="collapse-item" href="{{ url('/etsyetu/commande')}}">Commande</a>
                      <a class="collapse-item" href="{{ url('/etsyetu/comment')}}">Commentaire</a>
                  </div>

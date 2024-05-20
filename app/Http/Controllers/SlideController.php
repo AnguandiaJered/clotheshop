@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Testimonial;
+use App\Models\Slide;
+use Illuminate\Support\Facades\Storage;
 
 class SlideController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $testimonial = Testimonial::latest()->get();
-        return view('admin.testimonial', compact('testimonial'));
+        $slide = Slide::orderBy('id','desc')->paginate(5);
+        return view('admin.slide', compact('slide'));
     }
 
     /**
@@ -30,24 +31,23 @@ class SlideController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'fonction' => 'required',
-            'description' => 'required',
+            'title' => 'required',
+            'content' => 'required',
         ]);
 
-        if(!is_null($request->avatar)){
+        if(!is_null($request->image)){
 
-            $new_name = time().'.'.$request->avatar->getClientOriginalExtension();
-            $request->avatar->move(public_path('/storage/images'), $new_name);
+            $new_name = time().'.'.$request->image->getClientOriginalExtension();
+            $request->image->move(public_path('/storage/images'), $new_name);
 
-            $testimonial = new Testimonial;
-            $testimonial->name = $request->input('name');
-            $testimonial->fonction = $request->input('fonction');
-            $testimonial->avatar = $new_name;
-            $testimonial->description = $request->input('description');
-            $testimonial->save();
+            $slide = new Slide();
+            $slide->title = $request->input('title');
+            $slide->content = $request->input('content');
+            $slide->image = $new_name;
+            $slide->active = true;
+            $slide->save();
         }
-        return redirect(route('testimonial.index'))->with([
+        return redirect(route('slide.index'))->with([
             'message' => 'Successfully saved.!',
             'alert-type' => 'success',
         ]);
@@ -58,8 +58,8 @@ class SlideController extends Controller
      */
     public function show(string $id)
     {
-        $testimonial = Testimonial::findOrFail($id);
-        return view('admin.testimonial', compact('testimonial'));
+        $slide = Slide::findOrFail($id);
+        return view('admin.slide', compact('slide'));
     }
 
     /**
@@ -67,8 +67,8 @@ class SlideController extends Controller
      */
     public function edit(string $id)
     {
-        $testimonial = Testimonial::findOrFail($id);
-        return view('admin.testimonial', compact('testimonial'));
+        $slide = Slide::findOrFail($id);
+        return view('admin.slide', compact('slide'));
     }
 
     /**
@@ -76,39 +76,7 @@ class SlideController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $request->validate([
-            'name' => 'sometimes|string',
-            'fonction' => 'sometimes|string',
-            'description' => 'sometimes|string',
-        ]);
-
-        $payload = [];
-        if($request->hasFile('avatar')){
-            $avatar = time().'.'.$request->avatar->getClientOriginalExtension();
-            $request->avatar->move(public_path('/storage/images'),$avatar);
-
-            $payload = array_merge($payload, [
-                'avatar'=> $avatar
-            ]);
-        }
-
-        $testimonial = Testimonial::find($id);
-        if($testimonial){
-            $payload = array_merge($payload, $request->except(['avatar']));
-
-            $testimonial->update($payload);
-
-            return redirect(route('testimonial.index'))->with([
-                'message' => 'Successfully updated.!',
-                'alert-type' => 'success',
-            ]);
-
-        }else{
-            return redirect(route('testimonial.index'))->with([
-                'message' => 'Successfully updated.!',
-                'alert-type' => 'success',
-            ]);
-        }
+        //
     }
 
     /**
@@ -116,8 +84,8 @@ class SlideController extends Controller
      */
     public function destroy(string $id)
     {
-        Testimonial::find($id)->delete();
-        return redirect(route('testimonial.index'))->with([
+        Slide::find($id)->delete();
+        return redirect(route('slide.index'))->with([
             'message' => 'Successfully deleted.!',
             'alert-type' => 'success',
         ]);

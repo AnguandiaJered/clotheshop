@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Auth;
 class BlogController extends Controller
 {
 
+    public function comments()
+    {
+        $comment = Comment::orderBy('id','desc')->paginate(5);
+        return view('admin.comment', compact('comment'));
+    }
+
     public function comment(Request $request)
     {
         $request->validate([

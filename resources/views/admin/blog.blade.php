@@ -60,12 +60,13 @@
                                                         <label for="excerpt">Entré detail</label>
                                                         <textarea name="excerpt" id="excerpt" cols="30" rows="5" class="form-control"></textarea>
                                                     </div>
+
+                                                </div>
+                                                <div class="col-md-6 mt-3">
                                                     <div class="form-group">
                                                         <label for="body">Entré detail suite</label>
                                                         <textarea name="body" id="body" cols="30" rows="5" class="form-control"></textarea>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6 mt-3">
                                                     <div class="form-group">
                                                         <label for="image">Entré l'image</label>
                                                         <input type="file" class="form-control" name='image' required />
@@ -129,7 +130,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                    @foreach ($post as $item)
+                                    @foreach ($blog as $item)
                                         <div id="edit{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                                             <div role="document" class="modal-dialog">
                                                 <div class="modal-content">

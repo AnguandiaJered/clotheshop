@@ -33,11 +33,15 @@ Route::group(['prefix' => 'etsyetu'], function () {
     });
 
     Route::controller(ContactController::class)->group(function () {
-        Route::get('/message', 'message')->name('message.message');
+        Route::get('/message', 'messages')->name('message.message');
     });
 
-    Route::controller(ContactController::class)->group(function () {
+    Route::controller(BlogController::class)->group(function () {
         Route::get('/comment', 'comments')->name('comment');
+    });
+
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/commande', 'order')->name('commande');
     });
 
     Route::controller(UserController::class)->group(function () {
@@ -54,6 +58,14 @@ Route::group(['prefix' => 'etsyetu'], function () {
         Route::get('/role/{id}', 'show')->name('role.show');
         Route::post('/role/update', 'update')->name('role.update');
         Route::get('/role/{id}', 'destroy')->name('role.destroy');
+    });
+
+    Route::controller(ProductController::class)->group(function () {
+        Route::get('/products', 'index')->name('products.index');
+        Route::post('/products', 'store')->name('products.store');
+        Route::get('/products/{id}', 'show')->name('products.show');
+        Route::post('/products/update', 'update')->name('products.update');
+        Route::get('/products/{id}', 'destroy')->name('products.destroy');
     });
 
     Route::controller(SlideController::class)->group(function () {
@@ -108,7 +120,7 @@ Route::group(['prefix' => 'etsyetu'], function () {
     Route::group(['prefix' => 'blogs'], function () {
         Route::get('/',[PostController::class, 'index'])->name('blogs');
         Route::get('/{y}/{m}/{d}/{slug}', [PostController::class, 'show'])->name('blog.show');
-        Route::post('/{y}/{m}/{d}/{slug}', [ContactController::class, 'comment'])->name('comment');
+        Route::post('/{y}/{m}/{d}', [BlogController::class, 'comment'])->name('comment');
         Route::get('/category/{slug}', [PostController::class, 'sortByCategory'])->name('blog.category');
         Route::get('/search', [PostController::class, 'search'])->name('search');
         Route::get('/presse', [PostController::class, 'presse'])->name('presse');

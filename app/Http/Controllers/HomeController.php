@@ -25,6 +25,11 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function order()
+    {
+        return view('admin.commande');
+    }
+
     public function index()
     {
         $product = Product::latest()->limit(3)->get();
