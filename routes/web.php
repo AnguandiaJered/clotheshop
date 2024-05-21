@@ -119,7 +119,8 @@ Route::group(['prefix' => 'etsyetu'], function () {
 
     Route::group(['prefix' => 'blogs'], function () {
         Route::get('/',[PostController::class, 'index'])->name('blogs');
-        Route::get('/{y}/{m}/{d}/{slug}', [PostController::class, 'show'])->name('blog.show');
+        // Route::get('/{y}/{m}/{d}/{slug}', [PostController::class, 'show'])->name('blog.show');
+        Route::get('/blog', [PostController::class, 'show'])->name('blog.show');
         Route::post('/{y}/{m}/{d}', [BlogController::class, 'comment'])->name('comment');
         Route::get('/category/{slug}', [PostController::class, 'sortByCategory'])->name('blog.category');
         Route::get('/search', [PostController::class, 'search'])->name('search');

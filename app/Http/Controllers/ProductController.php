@@ -54,7 +54,6 @@ class ProductController extends Controller
             'description' => 'required',
             'slug' => 'required',
             'size' => 'required',
-            'color' => 'required',
         ]);
 
         if(!is_null($request->image)){
@@ -73,7 +72,6 @@ class ProductController extends Controller
             $product->image = $new_name;
             $product->slug = $request->input('slug');
             $product->size = $request->input('size');
-            $product->color = $request->input('color');
             $product->save();
         }
         return redirect(route('product.index'))->with([

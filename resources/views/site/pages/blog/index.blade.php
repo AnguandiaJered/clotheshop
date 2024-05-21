@@ -1,117 +1,265 @@
-@extends('client.front.layouts.default')
-
-@section('body-class','page-template page-template-tpl-default-elementor page-template-tpl-default-elementor-php page page-id-1031 theme-unico woocommerce-js menu-layer elementor-default elementor-kit-21 elementor-page elementor-page-1031 e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit')
-
-@section('facebook')
-<!-- facebook plugin -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0&appId=732030853805224&autoLogAppEvents=1" nonce="2ecEaPGi"></script>
-@endsection
-
-
-@section('htmlmeta')
-<meta property="og:site_name" content="{{ config('app.name') }}">
-<meta property="og:title" content="BLOG">
-<meta property="og:url" content="">
-
-<meta name="twitter:site" content="{{ config('app.name') }}">
-<meta name="twitter:title" content="BLOG">
-
-@endsection
+@extends('site.layouts.default')
 
 @section('content')
-<div class="clearfix"></div>
+    <!-- Page Banner Section Start -->
+    <div class="section page-banner-section" style="background-image: url(assets/assets/images/page-banner.jpg)">
+        <div class="container">
+            <!-- Page Banner Content End -->
+            <div class="page-banner-content">
+                <h2 class="title">Blog</h2>
 
-<div class="page-title-wrap pt-img-wrap" style="background:url({{ asset('images/banne.jpg')}}) no-repeat;">
-    <div class="container">
-        <div class="col-lg-12 col-md-12">
-            <div class="pt-caption text-center mt-5">
-                <h1>Blog</h1>
-                <ul class="bread-crumb clearfix">
-                    <li class="breadcrumb-item">
-                        <a title="Contact" href="">Home</a>
-                    </li>
-                    &nbsp;&nbsp;&nbsp; >
-
-                    <li class="breadcrumb-item">Blog</li>
-
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Blog</li>
                 </ul>
             </div>
+            <!-- Page Banner Content End -->
         </div>
     </div>
-</div>
+    <!-- Page Banner Section End -->
 
-<div class="clearfix"></div>
+    <!-- Blog Section Start -->
+    <div class="section section-padding">
+        <div class="container">
+            <!-- Blog Wrapper Start -->
+            <div class="blog-wrapper">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Single Blog Start -->
+                                <div class="single-blog">
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-01.jpg')}}" alt="Blog" /></a>
 
-<!--Start blog area-->
-<!-- ============================ Blog Grid Start ================================== -->
-<section>
-    <div class="container">
-        <div class="row clearfix">
-
-            <!--Sidebar Start-->
-
-            <div class="content-side col-xs-12 col-sm-12 col-md-12 col-lg-8">
-                <div class="blog-news big-detail-wrap">
-                    <div class="thm-unit-test">
-
-                        @forelse($posts as $post)
-                        <div class="post-1272 post type-post status-publish format-standard has-post-thumbnail hentry category-latest-news category-our-blog tag-lenses tag-technology">
-
-                            <div class="blog-detail-wrap pt-bottom">
-                                <!-- Featured Image -->
-                                <figure class="img-holder">
-                                    <a href="{{ $post->getRoute() }}">
-                                        <img width="960" height="450" alt="" decoding="async" data-srcset="{{ asset('images/banne.jpg') }} 1920w, {{ asset('images/banne.jpg') }} 600w, {{ asset('images/banne.jpg') }} 300w, {{ asset('images/banne.jpg') }} 1024w, {{ asset('images/banne.jpg') }} 768w, {{ asset('images/banne.jpg') }} 1536w" data-src="{{ asset('images/banne.jpg') }}" data-sizes="(max-width: 960px) 100vw, 960px" class="img-responsive wp-post-image lazyload" src="{{ asset('images/banne.jpg') }}" />
-                                        <noscript>
-                                            <img width="960" height="450" src="{{ asset('images/banne.jpg') }}" class="img-responsive wp-post-image" alt="" decoding="async" srcset="{{ asset('images/banne.jpg') }} 1920w, {{ asset('images/banne.jpg') }} 600w, {{ asset('images/banne.jpg') }} 300w, {{ asset('images/banne.jpg') }} 1024w, {{ asset('images/banne.jpg') }} 768w, {{ asset('images/banne.jpg') }} 1536w" sizes="(max-width: 960px) 100vw, 960px" />
-                                        </noscript>
-                                    </a>
-                                    <div class="blog-post-date theme-bg">
-                                        {{ $post->created_at->format('M d, Y') }}
-                                        <!-- January 5, 2021  -->
+                                    <div class="blog-content">
+                                        <ul class="blog-meta">
+                                            <li>
+                                                <i class="pe-7s-user"></i>
+                                                <span> BY:<a href="#">ADMIN</a></span>
+                                            </li>
+                                            <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
+                                        </ul>
+                                        <h4 class="title">
+                                            <a href="{{ route('blog.show')}}">Unique products that will impress your home.</a>
+                                        </h4>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Lire plus</a>
                                     </div>
-                                </figure>
-                                <!-- Blog Content -->
-                                <div class="full blog-content">
-                                    <div class="post-meta">Par: <a href="" class="author theme-cl">{{ $post->authorId?->name }}</a> </div>
-
-                                    <a href="{{ $post->getRoute() }}">
-                                        <h3>{{ $post->title }}</h3>
-                                    </a>
-
-                                    <div class="blog-text">
-                                        <p>{{ $post->excerpt }}</p>
-                                    </div>
-
-                                    <a href="{{ $post->getRoute() }}" class="btn btn-cta">Lire plus</a>
                                 </div>
+                                <!-- Single Blog End -->
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Single Blog Start -->
+                                <div class="single-blog">
+                                    <div class="gallery-active">
+                                        <div class="swiper-container">
+                                            <div class="swiper-wrapper">
+                                                <div class="blog-image swiper-slide">
+                                                    <a href="{{ route('blog.show')}}">
+                                                        <img src="{{ asset('assets/assets/images/blog/blog-03.jpg')}}" alt="" />
+                                                    </a>
+                                                </div>
+                                                <div class="blog-image swiper-slide">
+                                                    <a href="{{ route('blog.show')}}">
+                                                        <img src="{{ asset('assets/assets/images/blog/blog-09.jpg')}}" alt="" />
+                                                    </a>
+                                                </div>
+                                                <div class="blog-image swiper-slide">
+                                                    <a href="{{ route('blog.show')}}">
+                                                        <img src="{{ asset('assets/assets/images/blog/blog-07.jpg')}}" alt="" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- Add Arrows -->
+                                            <div class="swiper-button-prev">
+                                                <i class="pe-7s-angle-left"></i>
+                                            </div>
+                                            <div class="swiper-button-next">
+                                                <i class="pe-7s-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="blog-content">
+                                        <ul class="blog-meta">
+                                            <li>
+                                                <i class="pe-7s-user"></i>
+                                                <span> BY:<a href="#">ADMIN</a></span>
+                                            </li>
+                                            <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
+                                        </ul>
+                                        <h4 class="title">
+                                            <a href="{{ route('blog.show')}}">Interior designer Nancy, the witch of the unique
+                                                space.</a>
+                                        </h4>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Lire plus</a>
+                                    </div>
+                                </div>
+                                <!-- Single Blog End -->
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Single Blog Start -->
+                                <div class="single-blog">
+                                    <div class="blog-embed">
+                                        <div class="ratio ratio-16x9">
+                                            <iframe src="https://www.youtube.com/embed/EcK4cYmbE0s" title="YouTube video" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+
+                                    <div class="blog-content">
+                                        <ul class="blog-meta">
+                                            <li>
+                                                <i class="pe-7s-user"></i>
+                                                <span> BY:<a href="#">ADMIN</a></span>
+                                            </li>
+                                            <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
+                                        </ul>
+                                        <h4 class="title">
+                                            <a href="{{ route('blog.show')}}">Decorate your home with the most modern furnishings.</a>
+                                        </h4>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Lire plus</a>
+                                    </div>
+                                </div>
+                                <!-- Single Blog End -->
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Single Blog Start -->
+                                <div class="single-blog">
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-04.jpg')}}" alt="Blog" /></a>
+
+                                    <div class="blog-content">
+                                        <ul class="blog-meta">
+                                            <li>
+                                                <i class="pe-7s-user"></i>
+                                                <span> BY:<a href="#">ADMIN</a></span>
+                                            </li>
+                                            <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
+                                        </ul>
+                                        <h4 class="title">
+                                            <a href="{{ route('blog.show')}}">Spatialize with decorations of the Furns store.</a>
+                                        </h4>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Lire plus</a>
+                                    </div>
+                                </div>
+                                <!-- Single Blog End -->
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Single Blog Start -->
+                                <div class="single-blog">
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-06.jpg')}}" alt="Blog" /></a>
+
+                                    <div class="blog-content">
+                                        <ul class="blog-meta">
+                                            <li>
+                                                <i class="pe-7s-user"></i>
+                                                <span> BY:<a href="#">ADMIN</a></span>
+                                            </li>
+                                            <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
+                                        </ul>
+                                        <h4 class="title">
+                                            <a href="{{ route('blog.show')}}">Interior designer Nancy, the witch of the unique
+                                                space.</a>
+                                        </h4>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Lire plus</a>
+                                    </div>
+                                </div>
+                                <!-- Single Blog End -->
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Single Blog Start -->
+                                <div class="single-blog">
+                                    <div class="blog-embed">
+                                        <div class="ratio ratio-16x9">
+                                            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/182537870&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true" title="YouTube video" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+
+                                    <div class="blog-content">
+                                        <ul class="blog-meta">
+                                            <li>
+                                                <i class="pe-7s-user"></i>
+                                                <span> BY:<a href="#">ADMIN</a></span>
+                                            </li>
+                                            <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
+                                        </ul>
+                                        <h4 class="title">
+                                            <a href="{{ route('blog.show')}}">Best desks that are stylish and functional with storage
+                                                space.</a>
+                                        </h4>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Lire plus</a>
+                                    </div>
+                                </div>
+                                <!-- Single Blog End -->
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Single Blog Start -->
+                                <div class="single-blog">
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-09.jpg')}}" alt="Blog" /></a>
+
+                                    <div class="blog-content">
+                                        <ul class="blog-meta">
+                                            <li>
+                                                <i class="pe-7s-user"></i>
+                                                <span> BY:<a href="#">ADMIN</a></span>
+                                            </li>
+                                            <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
+                                        </ul>
+                                        <h4 class="title">
+                                            <a href="{{ route('blog.show')}}">10 best extendable dining tables to suit your dinner
+                                                party needs.</a>
+                                        </h4>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Lire plus</a>
+                                    </div>
+                                </div>
+                                <!-- Single Blog End -->
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Single Blog Start -->
+                                <div class="single-blog">
+                                    <a href="{{ route('blog.show')}}"><img src="{{ asset('assets/assets/images/blog/blog-02.jpg')}}" alt="Blog" /></a>
+
+                                    <div class="blog-content">
+                                        <ul class="blog-meta">
+                                            <li>
+                                                <i class="pe-7s-user"></i>
+                                                <span> BY:<a href="#">ADMIN</a></span>
+                                            </li>
+                                            <li><i class="pe-7s-date"></i> <span>27 FEB 2023</span></li>
+                                        </ul>
+                                        <h4 class="title">
+                                            <a href="{{ route('blog.show')}}">Digital technologies are improving and growing the
+                                                design industry.</a>
+                                        </h4>
+                                        <a href="{{ route('blog.show')}}" class="btn btn-dark btn-hover-primary">Lire plus</a>
+                                    </div>
+                                </div>
+                                <!-- Single Blog End -->
                             </div>
 
+                            <span>Aucun news pour l'instant</span>
+
                         </div>
-                        @empty
-                        <span>Aucun news pour l'instant</span>
-                        @endforelse
+
+                        <!-- Page pagination Start -->
+                        <div class="page-pagination">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link active" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- Page pagination End -->
                     </div>
-                    <!--Pagination-->
-                    <div class="pagination-wrapper bs-example text-center">
-                        {{ $posts->links() }}
-                        <!-- <ul class="pagination">
-                            <li><span class="page-numbers current">1</span></li>
-                            <li><a class="page-numbers" href="page/2/index.html">2</a></li>
-                            <li><a class="next page-numbers" href="page/2/index.html"><i class="fa fa-angle-right"></i></a></li>
-                        </ul> -->
-                    </div>
+
+                    <!--Sidebar Start-->
+                    @include('site.pages.blog.sidebar')
+
                 </div>
             </div>
-
-            <!--Sidebar Start-->
-            @include('client.front.pages.blog.sidebar', $categories)
-
+            <!-- Blog Wrapper End -->
         </div>
     </div>
-</section>
-<!--End blog area-->
+    <!-- Blog Section End -->
 
 @endsection

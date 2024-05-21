@@ -80,7 +80,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // \DB::update("UPDATE users set name = ?, email = ?, phone = ?, password = ? WHERE id= ? ", [$request->name,$request->email,$request->phone,\bcrypt($request->password),$request->id]);
+
         $request->validate([
             'name' => 'sometimes|string',
             'email' => 'sometimes|email|unique:users',
@@ -89,15 +89,17 @@ class UserController extends Controller
             'role_id' => 'sometimes|integer'
         ]);
 
-            $user = User::findOrFail($id);
-            $user->name = $request->input('name');
-            $user->email = $request->input('email');
-            $user->phone = $request->input('phone');
-            $user->password = bcrypt($request->input('password'));
-            $user->role_id = $request->input('role_id');
-            $user->active = true;
-            $user->verified = true;
-            $user->save();
+        \DB::update("UPDATE users set name = ?, email = ?, phone = ?, password = ? WHERE id= ? ", [$request->name,$request->email,$request->phone,\bcrypt($request->password),$request->id]);
+
+            // $user = User::findOrFail($id);
+            // $user->name = $request->input('name');
+            // $user->email = $request->input('email');
+            // $user->phone = $request->input('phone');
+            // $user->password = bcrypt($request->input('password'));
+            // $user->role_id = $request->input('role_id');
+            // $user->active = true;
+            // $user->verified = true;
+            // $user->save();
 
         return redirect(route('users.index'))->with([
             'message' => 'Successfully updated.!',

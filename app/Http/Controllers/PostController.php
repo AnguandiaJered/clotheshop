@@ -26,7 +26,8 @@ class PostController extends Controller
 
         // $post = Post::latest()->limit(3)->get();
 
-        return view('site.pages.blog', compact('blog', 'categories'));
+        // return view('site.pages.blog', compact('blog', 'categories'));
+        return view('site.pages.blog.index', compact('blog', 'categories'));
     }
     /**
       *
@@ -47,7 +48,8 @@ class PostController extends Controller
 
               $blog = Blog::with('authorId', 'category')->orderByRaw("RAND()")->latest()->paginate(config('app.perPages.front.blogs'));
           }
-          return view('site.pages.blog', compact('blog', 'categories'));
+        //   return view('site.pages.blog', compact('blog', 'categories'));
+        return view('site.pages.blog.index', compact('blog', 'categories'));
       }
 
 
@@ -57,7 +59,9 @@ class PostController extends Controller
 
           $blog = Blog::with('authorId', 'category')->whereSlug($slug)->firstOrFail();
 
-          return view('site.pages.blog_detail', compact('blog','categories'));
+        //   return view('site.pages.blog_detail', compact('blog','categories'));
+
+        return view('site.pages.blog.show', compact('blog','categories'));
       }
 
       public function search(Request $request)

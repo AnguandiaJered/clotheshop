@@ -65,16 +65,16 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
         $request->validate([
             'name' => 'sometimes|string'
         ]);
 
-        $role = Role::findOrFail($id);
-        $role->name=$request->input('name');
-        $role->save();
-        // DB::update("UPDATE roles set name = ? WHERE id= ? ", [$request->name,$request->id]);
+        // $role = Role::findOrFail($id);
+        // $role->name=$request->input('name');
+        // $role->save();
+        DB::update("UPDATE roles set name = ? WHERE id= ? ", [$request->name,$request->id]);
 
         return redirect(route('role.index'))->with([
             'message' => 'Successfully updated.!',

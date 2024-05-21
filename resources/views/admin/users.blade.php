@@ -187,7 +187,7 @@
                                             <td>{{$items->verified}}</td>
                                             <td>
                                                 <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/etsyetu/users/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
-                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/etsyetu/users/'.$item->id}}" class="ml-3"><i class="fa fa-trash"></i></a>
+                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/etsyetu/users/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

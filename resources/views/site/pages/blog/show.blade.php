@@ -1,135 +1,144 @@
-@extends('client.front.layouts.default')
-
-@section('body-class','page-template page-template-tpl-default-elementor page-template-tpl-default-elementor-php page page-id-1031 theme-unico woocommerce-js menu-layer elementor-default elementor-kit-21 elementor-page elementor-page-1031 e--ua-blink e--ua-chrome e--ua-mac e--ua-webkit')
-
-@section('facebook')
-<!-- facebook plugin -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0&appId=732030853805224&autoLogAppEvents=1" nonce="5f53XpB0"></script>@endsection
-
-@section('htmlmeta')
-<meta property="og:site_name" content="{{ config('app.name') }}">
-<meta property="og:title" content="{{ $post->title }}">
-<meta property="og:url" content="{{ $post->getRoute() }}">
-<meta property="og:description" content="{{ $post->excerpt }}">
-
-<meta name="twitter:site" content="{{ config('app.name') }}">
-<meta name="twitter:title" content="{{ $post->title }}">
-<meta name="twitter:description" content="{{ $post->excerpt }}">
-<meta name="twitter:card" content="{{ $post->excerpt }}">
-<meta name="twitter:card" content="summary_large_image" />
-@endsection
+@extends('site.layouts.default')
 
 @section('content')
-<div class="clearfix"></div>
+    <!-- Page Banner Section Start -->
+    <div class="section page-banner-section" style="background-image: url(assets/assets/images/page-banner.jpg)">
+        <div class="container">
+            <!-- Page Banner Content End -->
+            <div class="page-banner-content">
+                <h2 class="title">Blog</h2>
 
-<div class="page-title-wrap pt-img-wrap" style="background:url({{ asset('images/banne.jpg')}}) no-repeat;">
-    <div class="container">
-        <div class="col-lg-12 col-md-12">
-            <div class="pt-caption text-center mt-5">
-                <h1>Blog</h1>
-                <ul class="bread-crumb clearfix">
-                    <li class="breadcrumb-item">
-                        <a title="Contact" href="">Home</a>
-                    </li>
-                    &nbsp;&nbsp;&nbsp; >
-
-                    <li class="breadcrumb-item">News</li>
-
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">News</li>
                 </ul>
             </div>
+            <!-- Page Banner Content End -->
         </div>
     </div>
-</div>
+    <!-- Page Banner Section End -->
 
-<div class="clearfix"></div>
+    <!-- Blog Details Section Start -->
+    <div class="section section-padding">
+        <div class="container">
+            <!-- Blog Wrapper Start -->
+            <div class="blog-wrapper">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Blog Details Wrapper Start -->
+                        <div class="blog-details-wrapper">
+                            <img src="{{ asset('assets/assets/images/blog/blog-details.jpg')}}" width="770" height="479" alt="Blog Details" />
 
-<section>
-    <div class="container">
-        <div class="row clearfix">
+                            <ul class="blog-meta">
+                                <li>
+                                    <i class="pe-7s-user"></i>
+                                    <span> BY:<a href="#">ADMIN</a></span>
+                                </li>
+                                <li>
+                                    <i class="pe-7s-date"></i>
+                                    <span>27 FEB 2023</span>
+                                </li>
+                            </ul>
 
+                            <h3 class="title">
+                                Unique products that will impress your home
+                            </h3>
 
-            <div class="content-side col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore etholk dolore magna
+                                aliqua. Ut enimlo ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut
+                                aliquipsn ex ea commodo consequat. Duis aute
+                                irure dolor in reprehen
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dol magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip
+                                exea coml consequat. Duis aute irure dolor
+                                in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatu
+                                Excepteur sint occaecat cupidatat non
+                                proident,
+                            </p>
+                            <div class="no-mrg">
+                                <div class="blog-footer-social">
+                                    <span>Partager <i class="fa fa-share-alt"></i></span>
 
+                                    <ul class="list-inline social">
+                                        <li><a href="http://www.facebook.com/sharer.php?u=" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
 
-                <div class="thm-unit-test">
+                                        <li><a href="https://twitter.com/share?url=&amp;text=everything-about-performance-appraisals" target="_blank"><i class="fa fa-twitter"></i></a></li>
 
-                    <article class="blog-news big-detail-wrap">
-                        <div class="blog-detail-wrap">
+                                        <li><a href="http://www.linkedin.com/shareArticle?url=&amp;title=everything-about-performance-appraisals"><i class="fa fa-linkedin"></i></a></li>
 
-                            <!-- Featured Image -->
-                            <figure class="img-holder">
-                                <img width="800" height="450" alt="" decoding="async" data-srcset="{{ asset('images/banne.jpg') }} 1920w, {{ asset('images/banne.jpg') }} 600w, {{ asset('images/banne.jpg') }} 300w, {{ asset('images/banne.jpg') }} 1024w, {{ asset('images/banne.jpg') }} 768w, {{ asset('images/banne.jpg') }} 1536w" data-src="{{ asset('images/banne.jpg') }}" data-sizes="(max-width: 800px) 100vw, 800px" class="img-responsive wp-post-image lazyload" src="{{ asset('images/banne.jpg') }}" /><noscript><img width="800" height="450" src="{{ asset('images/banne.jpg') }}" class="img-responsive wp-post-image" alt="" decoding="async" srcset="{{ asset('images/banne.jpg') }} 1920w, {{ asset('images/banne.jpg') }} 600w, {{ asset('images/banne.jpg') }} 300w, {{ asset('images/banne.jpg') }} 1024w, {{ asset('images/banne.jpg') }} 768w, {{ asset('images/banne.jpg') }} 1536w" sizes="(max-width: 800px) 100vw, 800px" /></noscript>
-                                <div class="blog-post-date theme-bg">
-                                {{ $post->created_at->format('M d, Y') }} </div>
-                            </figure>
-
-                            <!-- Blog Content -->
-                            <div class="full blog-content">
-                                <div class="post-meta">By: <a href="" class="author theme-cl">{{ $post->authorId->name }}</a> </div>
-
-                                <div class="blog-text">
-
-                                    <div class="text m-b0">
-                                        <p>{{ $post->excerpt }}</p>
-                                        <p>{!! $post->body !!}</p>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <!-- <div class="post-meta"><span class="category pot-tags"><a href="" rel="tag">Technology</a> <a href="" rel="tag">Vision</a></span></div> -->
+                                        <li><a href="https://pinterest.com/pin/create/bookmarklet/?url=&amp;description=everything-about-performance-appraisals"><i class="fa fa-pinterest"></i></a></li>
+                                    </ul>
                                 </div>
-                                <!-- Blog Share Option -->
-                                <div class="no-mrg">
-                                    <div class="blog-footer-social">
-                                        <span>Partager <i class="fa fa-share-alt"></i></span>
+                            </div>
+                        </div>
+                        <!-- Blog Details Wrapper End -->
 
-                                        <ul class="list-inline social">
-                                            <li><a href="http://www.facebook.com/sharer.php?u={{ $post->getRoute() }}" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
+                        <!-- Blog Comment & Form Start -->
+                        <div class="blog-comment-form">
+                            <!-- Blog Comment Form Start -->
+                            <div class="blog-comment-form section-padding-02">
+                                <h3 class="comment-title">
+                                    Leave a comment
+                                </h3>
 
-                                            <li><a href="https://twitter.com/share?url={{ $post->getRoute() }}&amp;text=everything-about-performance-appraisals" target="_blank"><i class="fa fa-twitter"></i></a></li>
-
-                                            <li><a href="http://www.linkedin.com/shareArticle?url={{ $post->getRoute() }}&amp;title=everything-about-performance-appraisals"><i class="fa fa-linkedin"></i></a></li>
-
-                                            <li><a href="https://pinterest.com/pin/create/bookmarklet/?url={{ $post->getRoute() }}&amp;description=everything-about-performance-appraisals"><i class="fa fa-pinterest"></i></a></li>
-                                        </ul>
-                                    </div>
+                                <div class="comment-form-wrapper">
+                                    <form action="{{ route('comment.comment')}}">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="single-form">
+                                                    <input type="text" name="name" placeholder="Saisissez le nom ....." />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="single-form">
+                                                    <input type="email" name="email" placeholder="Saisissez l'email....." />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="single-form">
+                                                    <input type="text" name="subject" placeholder="Saisissez l'objet....." />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="single-form">
+                                                    <textarea name="message" placeholder="Votre message ....."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="single-form">
+                                                    {{-- <button class="btn btn-primary btn-hover-dark">
+                                                        Post Comment
+                                                    </button> --}}
+                                                    <input type="submit" class="btn btn-dark btn-hover-primary" value="Poster Commentaire" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-
                             </div>
-                            <!-- Blog Content -->
-
+                            <!-- Blog Comment Form End -->
                         </div>
-                    </article>
-
-                    <!--End Single blog Post-->
-
-
-                    <div class="comment-wrap comments-area post-comments" id="comments">
-                        <div class="comment-detail">
-                            <!-- <div class="comment-detail-title">
-                                <h4>
-                                    3 Replies to &ldquo;Everything About Performance Appraisals&rdquo; </h4>
-                            </div> -->
-
-                            <div id="singlecomment-detail" class="comment-detail-list">
-                            <div class="fb-comments" data-href="https://www.facebook.com/CongoPeaceNetwork" data-width="" data-numposts="5"></div>
-                            </div>
-
-
-                        </div>
+                        <!-- Blog Comment & Form End -->
                     </div>
 
+                    <!--Sidebar Start-->
+                    @include('site.pages.blog.sidebar')
                 </div>
-
             </div>
-
-            @include('client.front.pages.blog.sidebar', $categories)
-
+            <!-- Blog Wrapper End -->
         </div>
     </div>
-</section>
-<!--End blog area-->
-
-
-<div class="clearfix"></div>
+    <!-- Blog Details Section End -->
 
 @endsection

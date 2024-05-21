@@ -73,6 +73,6 @@ class Blog extends Model
 
     public static function getFeedItems()
     {
-        return Post::all();
+        return Blog::all();
     }
 }

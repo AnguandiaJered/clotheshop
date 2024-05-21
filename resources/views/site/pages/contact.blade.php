@@ -90,39 +90,43 @@
                     <div class="col-lg-8">
                         <!-- Contact Form Start  -->
                         <div class="contact-form">
-                            <form id="contact-form" action="https://htmldemo.net/furbar-1/furbar/assets/php/contact.php" method="post">
+                            <form id="contact-form" action="{{ route('contact.contact')}}" method="post">
+                                <div style="display: none;">
+                                    @csrf
+                                </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="single-form">
-                                            <input type="text" name="name" placeholder="Name*" />
+                                            <input type="text" name="name" placeholder="Saisissez le nom ....." />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="single-form">
-                                            <input type="email" name="email" placeholder="Email*" />
+                                            <input type="email" name="email" placeholder="Saisissez l'email....." />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="single-form">
-                                            <input type="text" name="subject" placeholder="Subject" />
+                                            <input type="text" name="subject" placeholder="Saisissez l'objet....." />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="single-form">
-                                            <input type="text" name="phone" placeholder="Phone No" />
+                                            <input type="text" name="phone" placeholder="Saisissez le numéro de téléphone....." />
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="single-form">
-                                            <textarea name="message" placeholder="Write your comments here"></textarea>
+                                            <textarea name="message" placeholder="Votre message ....."></textarea>
                                         </div>
                                     </div>
                                     <p class="form-message"></p>
-                                    <div class="col-md-12">
+                                    <div class="col-md-5">
                                         <div class="single-form">
-                                            <button type="submit" class="btn btn-dark btn-hover-primary">
+                                            {{-- <button type="submit" class="btn btn-dark btn-hover-primary">
                                                Envoyer
-                                            </button>
+                                            </button> --}}
+                                            <input type="submit" class="btn btn-dark btn-hover-primary" value="Envoyer" />
                                         </div>
                                     </div>
                                 </div>
