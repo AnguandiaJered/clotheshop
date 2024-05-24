@@ -119,7 +119,7 @@
                                     </tfoot>
                                     <tbody>
                                         @foreach ($user as $items)
-                                        <div id="edit{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+                                        <div id="edit{{$items->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                                             <div role="document" class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -129,31 +129,31 @@
                                                     <div class="modal-body col-md-12">
                                                         <form id="forme" method="POST" action="{{ route('users.update')}}" class="form-horizontal col-md-12" autocomplete="off">
                                                             @csrf
-                                                            <input type="hidden" name="id" id="id" value="{{$item->id}}" class="form-control" required />
+                                                            <input type="hidden" name="id" id="id" value="{{$items->id}}" class="form-control" required />
                                                             <div class="row">
                                                                 <div class="col-md-12 mt-3">
                                                                     <div class="form-group">
                                                                         <label for="name">Entré noms</label>
-                                                                        <input type="text" class="form-control" name='name' value="{{$item->name}}" required />
+                                                                        <input type="text" class="form-control" name='name' value="{{$items->name}}" required />
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="email">Entré l'email</label>
-                                                                        <input type="email" class="form-control" name='email' value="{{$item->email}}" required />
+                                                                        <input type="email" class="form-control" name='email' value="{{$items->email}}" required />
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="phone">Entré le phone</label>
-                                                                        <input type="tel" class="form-control" name='phone' value="{{$item->phone}}" required />
+                                                                        <input type="tel" class="form-control" name='phone' value="{{$items->phone}}" required />
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="password">Entré le password</label>
-                                                                        <input type="password" class="form-control" name='password' value="{{$item->password}}" required />
+                                                                        <input type="password" class="form-control" name='password' value="{{$items->password}}" required />
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="match_id">selectionner le privilège</label>
                                                                         <select class="form-control" name="role_id">
                                                                             <option selected="">Choose...</option>
                                                                             @foreach ($role as $item)
-                                                                            <option value="{{$item->role_id}}">{{$item->name}}</option>
+                                                                            <option value="{{$items->role_id}}">{{$item->name}}</option>
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
@@ -168,7 +168,7 @@
                                             </div>
                                         </div>
                                         <tr>
-                                            <div class="modal fade" id="edit{{$item->id}}">
+                                            <div class="modal fade" id="edit{{$items->id}}">
                                                 <div class="modal-dialog modal-success">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -186,8 +186,8 @@
                                             <td>{{$items->active}}</td>
                                             <td>{{$items->verified}}</td>
                                             <td>
-                                                <a data-toggle="modal" data-target="#edit{{$item->id}}" href="{{'/etsyetu/users/'.$item->id}}" .$id><i class="fa fa-edit"></i></a>
-                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/etsyetu/users/'.$item->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
+                                                <a data-toggle="modal" data-target="#edit{{$items->id}}" href="{{'/etsyetu/users/'.$items->id}}" .$id><i class="fa fa-edit"></i></a>
+                                                <a onclick="return (confirm(' Voulez-vous supprimer vraiment cette information ?'));" href="{{'/etsyetu/users/'.$items->id}}" id="del" class="ml-3"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
