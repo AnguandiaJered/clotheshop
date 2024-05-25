@@ -14,7 +14,7 @@ class ContactController extends Controller
 
     public function messages()
     {
-        $message = Message::orderBy('id','desc')->paginate(5);
+        $message = Message::latest()->get();
         return view('admin.message', compact('message'));
     }
 

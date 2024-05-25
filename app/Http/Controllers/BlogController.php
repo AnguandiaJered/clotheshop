@@ -15,7 +15,7 @@ class BlogController extends Controller
 
     public function comments()
     {
-        $comment = Comment::orderBy('id','desc')->paginate(5);
+        $comment = Comment::latest()->get();
         return view('admin.comment', compact('comment'));
     }
 

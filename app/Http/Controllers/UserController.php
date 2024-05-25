@@ -14,8 +14,8 @@ class UserController extends Controller
     public function index()
     {
         // $user = User::with(['role'])->orderBy('id','desc')->paginate(5);
-        $user = User::orderBy('id','desc')->paginate(5);
-        // $user = User::latest()->get();
+        // $user = User::orderBy('id','desc')->paginate(5);
+        $user = User::latest()->get();
         $role = Role::latest()->get();
         return view('admin.users', compact('user','role'));
     }

@@ -102,7 +102,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                    @foreach ($categories as $item)
+                                    @foreach ($subcategories as $item)
                                         <div id="edit{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                                             <div role="document" class="modal-dialog">
                                                 <div class="modal-content">

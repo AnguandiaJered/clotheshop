@@ -27,7 +27,7 @@ class ProductController extends Controller
     {
         $categorie = Category::latest()->get();
         $subcategorie = SubCategory::latest()->get();
-        $product = Product::orderBy('id','desc')->paginate(5);
+        $product = Product::latest()->get();
         return view('admin.product', compact('product','categorie','subcategorie'));
     }
 

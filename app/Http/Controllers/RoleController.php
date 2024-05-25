@@ -13,7 +13,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $role = Role::orderBy('id','desc')->paginate(5);
+        $role = Role::latest()->get();
         return view('admin.role', compact('role'));
     }
 

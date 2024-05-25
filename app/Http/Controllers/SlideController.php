@@ -13,7 +13,7 @@ class SlideController extends Controller
      */
     public function index()
     {
-        $slide = Slide::orderBy('id','desc')->paginate(5);
+        $slide = Slide::latest()->get();
         return view('admin.slide', compact('slide'));
     }
 
