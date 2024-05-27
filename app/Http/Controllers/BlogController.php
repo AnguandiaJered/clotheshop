@@ -49,7 +49,7 @@ class BlogController extends Controller
     {
         $user = User::latest()->get();
         $categorie = Category::latest()->get();
-        $blog = Blog::orderBy('id','desc')->paginate(5);
+        $blog = Blog::latest()->get();
         return view('admin.blog', compact('blog','user','categorie'));
     }
 
