@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comment;
-use App\Models\Blog;
-use App\Models\Category;
+use App\Models\Post;
+use App\Models\Categorie;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -48,9 +48,9 @@ class BlogController extends Controller
     public function index()
     {
         $user = User::latest()->get();
-        $categorie = Category::latest()->get();
-        $blog = Blog::latest()->get();
-        return view('admin.blog', compact('blog','user','categorie'));
+        $categorie = Categorie::latest()->get();
+        $post = Post::latest()->get();
+        return view('admin.blog', compact('post','user','categorie'));
     }
 
     /**
@@ -80,17 +80,17 @@ class BlogController extends Controller
             $new_name = time().'.'.$request->image->getClientOriginalExtension();
             $request->image->move(public_path('/storage/images'), $new_name);
 
-            $blog = new Blog();
-            $blog->author_id = Auth::user()->id;
-            $blog->category_id = $request->input('category_id');
-            $blog->title = $request->input('title');
-            $blog->excerpt = $request->input('excerpt');
-            $blog->body = $request->input('body');
-            $blog->image = $new_name;
-            $blog->slug = $request->input('slug');
-            $blog->status = $request->input('status');
-            $blog->featured = true;
-            $blog->save();
+            $post = new Post();
+            $post->author_id = Auth::user()->id;
+            $post->category_id = $request->input('category_id');
+            $post->title = $request->input('title');
+            $post->excerpt = $request->input('excerpt');
+            $post->body = $request->input('body');
+            $post->image = $new_name;
+            $post->slug = $request->input('slug');
+            $post->status = $request->input('status');
+            $post->featured = true;
+            $post->save();
         }
         return redirect(route('blog.index'))->with([
             'message' => 'Successfully saved.!',
@@ -103,8 +103,8 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        $blog = Blog::findOrFail($id);
-        return view('admin.blog', compact('blog'));
+        $post = Post::findOrFail($id);
+        return view('admin.blog', compact('post'));
     }
 
     /**
@@ -112,8 +112,8 @@ class BlogController extends Controller
      */
     public function edit(string $id)
     {
-        $blog = Blog::findOrFail($id);
-        return view('admin.blog', compact('blog'));
+        $post = Post::findOrFail($id);
+        return view('admin.blog', compact('post'));
     }
 
     /**
@@ -129,7 +129,7 @@ class BlogController extends Controller
      */
     public function destroy(string $id)
     {
-        Blog::find($id)->delete();
+        Post::find($id)->delete();
         return redirect(route('blog.index'))->with([
             'message' => 'Successfully deleted.!',
             'alert-type' => 'success',

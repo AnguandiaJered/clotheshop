@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
-class Category extends Model
+class Categorie extends Model
 {
     use HasFactory, SluggableScopeHelpers;
 

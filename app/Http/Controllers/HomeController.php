@@ -20,16 +20,6 @@ class HomeController extends Controller
         return view('site.pages.about');
     }
 
-    public function dashboard()
-    {
-        return view('home');
-    }
-
-    public function order()
-    {
-        return view('admin.commande');
-    }
-
     public function index()
     {
         $product = Product::latest()->limit(3)->get();

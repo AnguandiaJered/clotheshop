@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{ LoginController, RoleController, BlogController, HomeController};
 use App\Http\Controllers\{ CategoryController, SubCategoryController, ContactController, ProductController};
-use App\Http\Controllers\{ UserController, PostController, SlideController, TestimonialController};
+use App\Http\Controllers\{ UserController, PostController, SlideController, TestimonialController, DashboardController};
 
 
 /*
@@ -18,14 +18,14 @@ use App\Http\Controllers\{ UserController, PostController, SlideController, Test
 */
 
 Route::group(['prefix' => 'etsyetu'], function () {
-    Route::get('/dashboard', [HomeController::class,'dashboard'])->name('admin.home');
+    Route::get('/dashboard', [DashboardController::class,'dashboard'])->name('admin.home');
 
     Route::controller(LoginController::class)->group(function () {
         Route::get('/etsyetu/login', 'index')->name('login');
 
         Route::get('/login', 'login_set')->name('login');
         Route::get('/logout', 'logout')->name('logout');
-        Route::get('/registered', 'registered')->name('register.index');
+        Route::get('/sign-up', 'registered')->name('register.index');
         Route::get('/forgot-password', 'forgot')->name('forgot');
         Route::get('/secure', 'secure')->name('secure');
         Route::post('/register', 'register')->name('register');
@@ -40,7 +40,7 @@ Route::group(['prefix' => 'etsyetu'], function () {
         Route::get('/comment', 'comments')->name('comment');
     });
 
-    Route::controller(HomeController::class)->group(function () {
+    Route::controller(DashboardController::class)->group(function () {
         Route::get('/commande', 'order')->name('commande');
     });
 

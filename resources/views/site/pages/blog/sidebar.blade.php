@@ -96,8 +96,7 @@
             <div class="side-widget-header border-0">
                 <h4>Facebook</h4>
             </div>
-            <div class="fb-page" data-href="https://www.facebook.com/CongoPeaceNetwork" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/CongoPeaceNetwork" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CongoPeaceNetwork">CongoPeaceNetwork</a></blockquote></div>
-
+            <div class="fb-page" data-href="https://www.facebook.com/EtsYetu" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/EtsYetu" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/EtsYetu">Etablissement Yetu</a></blockquote></div>
         </div>
     </div>
     <!-- Sidebar End -->

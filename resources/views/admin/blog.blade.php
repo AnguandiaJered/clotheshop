@@ -56,17 +56,8 @@
                                                         <label for="title">Entré titre</label>
                                                         <input type="text" class="form-control" name='title' required />
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="excerpt">Entré detail</label>
-                                                        <textarea name="excerpt" id="excerpt" cols="30" rows="5" class="form-control"></textarea>
-                                                    </div>
-
                                                 </div>
                                                 <div class="col-md-6 mt-3">
-                                                    <div class="form-group">
-                                                        <label for="body">Entré detail suite</label>
-                                                        <textarea name="body" id="body" cols="30" rows="5" class="form-control"></textarea>
-                                                    </div>
                                                     <div class="form-group">
                                                         <label for="image">Entré l'image</label>
                                                         <input type="file" class="form-control" name='image' required />
@@ -75,14 +66,24 @@
                                                         <label for="slug">Entré slug</label>
                                                         <input type="text" class="form-control" name='slug' required />
                                                     </div>
+                                                </div>
+                                                <div class="col-md-12 mt-3">
                                                     <div class="form-group">
-                                                        <label for="statut">selectionner le status</label>
+                                                        <label for="categorie">selectionner le status</label>
                                                         <select class="form-control" name="status">
                                                             <option selected="">Choose...</option>
                                                             <option value="PUBLISHED">PUBLISHED</option>
                                                             <option value="DRAFT">DRAFT</option>
                                                             <option value="PENDING">PENDING</option>
                                                         </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="excerpt">Entré detail</label>
+                                                        <textarea name="excerpt" id="excerpt" cols="30" rows="5" class="form-control"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="body">Entré detail suite</label>
+                                                        <textarea name="body" id="body" cols="30" rows="5" class="form-control"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -130,7 +131,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                    @foreach ($blog as $item)
+                                    @foreach ($post as $item)
                                         <div id="edit{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                                             <div role="document" class="modal-dialog">
                                                 <div class="modal-content">
@@ -154,16 +155,8 @@
                                                                         <label for="title">Entré titre</label>
                                                                         <input type="text" class="form-control" value="{{$item->title}}" name='title' required />
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                        <label for="excerpt">Entré detail</label>
-                                                                        <textarea name="excerpt" id="excerpt" cols="30" rows="5" value="{{$item->excerpt}}" class="form-control">{{$item->excerpt}}</textarea>
-                                                                    </div>
                                                                 </div>
                                                                 <div class="col-md-6 mt-3">
-                                                                    <div class="form-group">
-                                                                        <label for="body">Entré detail suite</label>
-                                                                        <textarea name="body" id="body" cols="30" rows="5" value="{{$item->body}}" class="form-control">{{$item->body}}</textarea>
-                                                                    </div>
                                                                     <div class="form-group">
                                                                         <label for="image">Entré l'image</label>
                                                                         <input type="file" class="form-control" value="{{$item->image}}" name='image' required />
@@ -171,6 +164,16 @@
                                                                     <div class="form-group">
                                                                         <label for="slug">Entré slug</label>
                                                                         <input type="text" class="form-control" value="{{$item->slug}}" name='slug' required />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 mt-3">
+                                                                    <div class="form-group">
+                                                                        <label for="excerpt">Entré detail</label>
+                                                                        <textarea name="excerpt" id="excerpt" cols="30" rows="5" value="{{$item->excerpt}}" class="form-control">{{$item->excerpt}}</textarea>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="body">Entré detail suite</label>
+                                                                        <textarea name="body" id="body" cols="30" rows="5" value="{{$item->body}}" class="form-control">{{$item->body}}</textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>

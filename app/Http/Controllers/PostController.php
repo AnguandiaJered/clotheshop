@@ -4,30 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\Categorie;
+use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-/**
+
+    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
-        $blog = Blog::with('authorId', 'category')
+        $posts = Post::with('authorId', 'category')
         ->where('status', 'PUBLISHED')
         // ->orderByRaw("RAND()")
         ->latest()
         ->paginate(4);
 
-        $categories = Category::orderByRaw("RAND()")->limit(5)->get();
+        $categories = Categorie::orderByRaw("RAND()")->limit(5)->get();
 
         // $post = Post::latest()->limit(3)->get();
 
-        // return view('site.pages.blog', compact('blog', 'categories'));
-        return view('site.pages.blog.index', compact('blog', 'categories'));
+        return view('site.pages.blog.index', compact('posts', 'categories'));
     }
     /**
       *
@@ -37,31 +38,28 @@ class PostController extends Controller
 
       public function sortByCategory(Request $request, string $slug)
       {
-          $cat = Category::findBySlug($slug);
+          $cat = Categorie::findBySlug($slug);
 
-          $categories = Category::orderByRaw("RAND()")->limit(5)->get();
+          $categories = Categorie::orderByRaw("RAND()")->limit(5)->get();
 
           if ($cat) {
 
-              $blog = Blog::where('category_id', $cat->id)->with('authorId', 'category')->orderByRaw("RAND()")->latest()->paginate(config('app.perPages.front.blogs'));
+              $posts = Post::where('category_id', $cat->id)->with('authorId', 'category')->orderByRaw("RAND()")->latest()->paginate(config('app.perPages.front.posts'));
           } else {
 
-              $blog = Blog::with('authorId', 'category')->orderByRaw("RAND()")->latest()->paginate(config('app.perPages.front.blogs'));
+              $posts = Post::with('authorId', 'category')->orderByRaw("RAND()")->latest()->paginate(config('app.perPages.front.posts'));
           }
-        //   return view('site.pages.blog', compact('blog', 'categories'));
-        return view('site.pages.blog.index', compact('blog', 'categories'));
+          return view('site.pages.blog.index', compact('posts', 'categories'));
       }
 
 
       public function show($y, $m, $d, $slug)
       {
-          $categories = Category::orderByRaw("RAND()")->limit(5)->get();
+          $categories = Categorie::orderByRaw("RAND()")->limit(5)->get();
 
-          $blog = Blog::with('authorId', 'category')->whereSlug($slug)->firstOrFail();
+          $post = Post::with('authorId', 'category')->whereSlug($slug)->firstOrFail();
 
-        //   return view('site.pages.blog_detail', compact('blog','categories'));
-
-        return view('site.pages.blog.show', compact('blog','categories'));
+          return view('site.pages.blog.show', compact('post','categories'));
       }
 
       public function search(Request $request)
@@ -88,15 +86,15 @@ class PostController extends Controller
               'q' => 'bail|required|max:100',
           ]);
 
-          $blog = DB::select(DB::Raw('select * from blogs where ' . $where));
+          $posts = DB::select(DB::Raw('select * from posts where ' . $where));
 
-          $blog = Blog::hydrate($blog);
+          $posts = Post::hydrate($posts);
 
-          $blog = $this->paginateCollection($blog, config('app.perPages.front.blogs') ?? 5);
+          $posts = $this->paginateCollection($posts, config('app.perPages.front.posts') ?? 5);
 
-          $searchInfo = str_plural('Result', $blog->count()) . ' for:' . '<strong> << ' . $rech . ' >> </strong>';
+          $searchInfo = str_plural('Result', $posts->count()) . ' for:' . '<strong> << ' . $rech . ' >> </strong>';
 
-          $categories = Category::orderByRaw("RAND()")->limit(5)->get();
+          $categories = Categorie::orderByRaw("RAND()")->limit(5)->get();
 
           return view('site.pages.blog.search', compact(
               'posts',
