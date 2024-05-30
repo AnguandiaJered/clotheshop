@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\SubCategory;
-use App\Models\Category;
+use App\Models\Categorie;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $categorie = Category::latest()->get();
+        $categorie = Categorie::latest()->get();
         $subcategorie = SubCategory::latest()->get();
         $product = Product::latest()->get();
         return view('admin.product', compact('product','categorie','subcategorie'));

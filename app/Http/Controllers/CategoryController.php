@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\Categorie;
 use DB;
 
 class CategoryController extends Controller
 {
-/**
+
+    /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::latest()->get();
+        $categories = Categorie::latest()->get();
         return view('admin.categorie', compact('categories'));
     }
 
@@ -35,7 +36,7 @@ class CategoryController extends Controller
             'slug' => 'required'
         ]);
 
-        $categories = new Category();
+        $categories = new Categorie();
         $categories->name=$request->input('name');
         $categories->slug=$request->input('slug');
         $categories->save();
@@ -51,7 +52,7 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        $categories = Category::findOrFail($id);
+        $categories = Categorie::findOrFail($id);
         return view('admin.categorie', compact('categories'));
     }
 
@@ -60,7 +61,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        $categories = Category::findOrFail($id);
+        $categories = Categorie::findOrFail($id);
         return view('admin.categorie', compact('categories'));
     }
 
@@ -87,7 +88,7 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        Category::find($id)->delete();
+        Categorie::find($id)->delete();
         return redirect(route('categorie.index'))->with([
             'message' => 'Successfully deleted.!',
             'alert-type' => 'success',

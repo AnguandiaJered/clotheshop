@@ -110,7 +110,7 @@
 
          <!-- Nav Item - Tables -->
          <li class="nav-item">
-             <a class="nav-link" onclick="return confirm('êtes-vous sûre de vouloire se deconnecter?');" href="#">
+             <a class="nav-link" onclick="return confirm('êtes-vous sûre de vouloire se deconnecter?');" href="{{ route('logout')}}">
                  <i class="fas fa-fw fa-sign-out-alt"></i>
                  <span>Se Deconnecter</span></a>
          </li>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SubCategory;
-use App\Models\Category;
+use App\Models\Categorie;
 use DB;
 
 class SubCategoryController extends Controller
@@ -14,7 +14,7 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::latest()->get();
+        $categories = Categorie::latest()->get();
         $subcategories = SubCategory::latest()->get();
         return view('admin.subcategorie', compact('subcategories','categories'));
     }

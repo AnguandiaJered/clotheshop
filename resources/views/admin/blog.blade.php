@@ -28,7 +28,6 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-
                     <div class="col-md-12 col-sm-12 text-right">
                         <button data-toggle="modal" data-target="#myModal" class="btn btn-primary mt-3 mb-4">Effectuer l'opération</button>
                         <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">

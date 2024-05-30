@@ -58,6 +58,8 @@
                                                         <label for="quantity">Entré quantity</label>
                                                         <input type="number" class="form-control" name='quantity' required />
                                                     </div>
+                                                </div>
+                                                <div class="col-md-6 mt-3">
                                                     <div class="form-group">
                                                         <label for="categorie">selectionner la categorie</label>
                                                         <select class="form-control" name="category_id">
@@ -68,19 +70,13 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="categorie">selectionner la sous categorie</label>
+                                                        <label for="categorie">selectionner subcategory</label>
                                                         <select class="form-control" name="subcategory_id">
                                                             <option selected="">Choose...</option>
                                                             @foreach ($subcategorie as $items)
                                                             <option value="{{$items->id}}">{{$items->name}}</option>
                                                             @endforeach
                                                         </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mt-3">
-                                                    <div class="form-group">
-                                                        <label for="telephone">Entré la description</label>
-                                                        <textarea name="description" id="" cols="30" rows="5" class="form-control"></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="image">Entré l'image</label>
@@ -90,10 +86,8 @@
                                                         <label for="slug">Entré slug</label>
                                                         <input type="text" class="form-control" name='slug' required />
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="slug">Entré couleur</label>
-                                                        <input type="text" class="form-control" name='slug' required />
-                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="size">selectionner le size</label>
                                                         <select class="form-control" name="size">
@@ -102,6 +96,10 @@
                                                             <option value="DRAFT">S</option>
                                                             <option value="PENDING">L</option>
                                                         </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="telephone">Entré la description</label>
+                                                        <textarea name="description" id="" cols="30" rows="5" class="form-control"></textarea>
                                                     </div>
                                                 </div>
                                             </div>

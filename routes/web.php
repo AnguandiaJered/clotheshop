@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{ LoginController, RoleController, BlogController, HomeController};
-use App\Http\Controllers\{ CategoryController, SubCategoryController, ContactController, ProductController};
-use App\Http\Controllers\{ UserController, PostController, SlideController, TestimonialController, DashboardController};
+use App\Http\Controllers\{ LoginController, RoleController, BlogController, HomeController };
+use App\Http\Controllers\{ CategoryController, SubCategoryController, ContactController, ProductController };
+use App\Http\Controllers\{ UserController, PostController, SlideController, TestimonialController, DashboardController };
 
 
 /*
@@ -24,7 +24,7 @@ Route::group(['prefix' => 'etsyetu'], function () {
         Route::get('/etsyetu/login', 'index')->name('login');
 
         Route::get('/login', 'login_set')->name('login');
-        Route::get('/logout', 'logout')->name('logout');
+        Route::get('/login', 'logout')->name('logout');
         Route::get('/sign-up', 'registered')->name('register.index');
         Route::get('/forgot-password', 'forgot')->name('forgot');
         Route::get('/secure', 'secure')->name('secure');
