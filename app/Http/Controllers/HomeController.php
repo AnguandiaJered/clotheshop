@@ -20,6 +20,16 @@ class HomeController extends Controller
         return view('site.pages.about');
     }
 
+    public function product()
+    {
+        return view('site.pages.products.products');
+    }
+
+    public function detail()
+    {
+        return view('site.pages.products.product_detail');
+    }
+
     public function index()
     {
         $product = Product::latest()->limit(3)->get();

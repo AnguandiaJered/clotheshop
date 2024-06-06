@@ -23,27 +23,24 @@
                                     Créer un nouveau compte au système .
                                 </span>
                             </div>
-                            <form class="user" method="post" id="user_form" enctype="multipart/form-data" action="#">
+                            <form class="user" method="post" id="user_form" action="{{route('auth.register')}}">
+                                @csrf
                                 <div class="form-group"></div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" name="first_name" class="form-control form-control-user" id="exampleFirstName" placeholder="Entrez votre nom">
+                                        <input type="text" name="name" class="form-control form-control-user" placeholder="Entrez votre nom">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" name="mail_ok" class="form-control form-control-user" id="exampleInputEmail" placeholder="Entrez votre adresse mail">
+                                    <input type="email" name="email" class="form-control form-control-user" placeholder="Entrez votre adresse mail">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" name="mail_ok" class="form-control form-control-user" id="exampleInputEmail" placeholder="Entrez votre fonction">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" name="mail_ok" class="form-control form-control-user" id="exampleInputEmail" placeholder="Entrez votre numero de telephone">
+                                    <input type="tel" name="phone" class="form-control form-control-user" placeholder="Entrez votre numero de telephone">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="password" name="user_password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Mot de passe secret">
+                                        <input type="password" name="password" class="form-control form-control-user" placeholder="Mot de passe secret">
                                     </div>
-
                                 </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox small">
@@ -52,10 +49,10 @@
                                         </label>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                {{-- <button type="submit" class="btn btn-primary btn-user btn-block">
                                     S'inscrire
-                                </button>
-
+                                </button> --}}
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value=" S'inscrire" />
                             </form>
                             <hr>
 

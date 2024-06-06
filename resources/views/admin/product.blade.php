@@ -61,15 +61,6 @@
                                                 </div>
                                                 <div class="col-md-6 mt-3">
                                                     <div class="form-group">
-                                                        <label for="categorie">selectionner la categorie</label>
-                                                        <select class="form-control" name="category_id">
-                                                            <option selected="">Choose...</option>
-                                                            @foreach ($categorie as $items)
-                                                            <option value="{{$items->id}}">{{$items->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
                                                         <label for="categorie">selectionner subcategory</label>
                                                         <select class="form-control" name="subcategory_id">
                                                             <option selected="">Choose...</option>
@@ -86,8 +77,6 @@
                                                         <label for="slug">Entré slug</label>
                                                         <input type="text" class="form-control" name='slug' required />
                                                     </div>
-                                                </div>
-                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="size">selectionner le size</label>
                                                         <select class="form-control" name="size">
@@ -97,6 +86,8 @@
                                                             <option value="PENDING">L</option>
                                                         </select>
                                                     </div>
+                                                </div>
+                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="telephone">Entré la description</label>
                                                         <textarea name="description" id="" cols="30" rows="5" class="form-control"></textarea>

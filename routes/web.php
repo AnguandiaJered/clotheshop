@@ -28,7 +28,7 @@ Route::group(['prefix' => 'etsyetu'], function () {
         Route::get('/sign-up', 'registered')->name('register.index');
         Route::get('/forgot-password', 'forgot')->name('forgot');
         Route::get('/secure', 'secure')->name('secure');
-        Route::post('/register', 'register')->name('register');
+        Route::post('/register', 'register')->name('auth.register');
         Route::post('/login', 'login')->name('auth.login');
     });
 

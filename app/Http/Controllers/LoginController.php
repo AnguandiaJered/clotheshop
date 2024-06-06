@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use Auth;
 
 class LoginController extends Controller
 {
@@ -26,6 +26,15 @@ class LoginController extends Controller
             $user->verified = true;
             $user->save();
 
+            return redirect(route('login'))->with([
+                'message' => 'Successfully saved.!',
+                'alert-type' => 'success',
+            ]);
+    }
+
+
+    public function index()
+    {
         return view('admin.login');
     }
 
@@ -36,7 +45,7 @@ class LoginController extends Controller
 
     public function logout()
     {
-        auth()->user()->tokens()->delete();
+        Auth::logout();
         return view('admin.login');
     }
 

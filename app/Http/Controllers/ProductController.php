@@ -10,14 +10,10 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public function product()
-    {
-        return view('site.pages.products.products');
-    }
 
-    public function detail()
+    public function __construct()
     {
-        return view('site.pages.products.product_detail');
+        $this->middleware('auth');
     }
 
     /**
@@ -66,7 +62,6 @@ class ProductController extends Controller
             $product->sale_price = $request->input('sale_price');
             $product->old_price = $request->input('old_price');
             $product->quantity = $request->input('quantity');
-            $product->category_id = $request->input('category_id');
             $product->subcategory_id = $request->input('subcategory_id');
             $product->description = $request->input('description');
             $product->image = $new_name;

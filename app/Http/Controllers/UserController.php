@@ -16,8 +16,7 @@ class UserController extends Controller
         // $user = User::with(['role'])->orderBy('id','desc')->paginate(5);
         // $user = User::orderBy('id','desc')->paginate(5);
         $user = User::latest()->get();
-        $role = Role::latest()->get();
-        return view('admin.users', compact('user','role'));
+        return view('admin.users', compact('user'));
     }
 
     /**
@@ -38,7 +37,6 @@ class UserController extends Controller
             'email' => 'sometimes|email|unique:users',
             'phone' => 'required',
             'password' => 'required|min:6',
-            'role_id' => 'required'
         ]);
 
             $user = new User;
@@ -46,7 +44,6 @@ class UserController extends Controller
             $user->email = $request->input('email');
             $user->phone = $request->input('phone');
             $user->password = bcrypt($request->input('password'));
-            $user->role_id = $request->input('role_id');
             $user->active = true;
             $user->verified = true;
             $user->save();
@@ -86,7 +83,7 @@ class UserController extends Controller
             'email' => 'sometimes|email|unique:users',
             'phone' => 'sometimes|string',
             'password' => 'sometimes|string|min:6',
-            'role_id' => 'sometimes|integer'
+            // 'role_id' => 'sometimes|integer'
         ]);
 
         \DB::update("UPDATE users set name = ?, email = ?, phone = ?, password = ? WHERE id= ? ", [$request->name,$request->email,$request->phone,\bcrypt($request->password),$request->id]);

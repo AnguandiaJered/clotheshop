@@ -17,13 +17,13 @@ return new class extends Migration
             $table->integer('sale_price');
             $table->integer('old_price');
             $table->integer('quantity');
-            $table->integer('category_id');
+            // $table->integer('category_id');
             $table->integer('subcategory_id');
             $table->string('description');
             $table->string('image');
             $table->string('slug')->unique();
             $table->string('size');
-            $table->string('color');
+            // $table->string('color');
             $table->timestamps();
         });
     }

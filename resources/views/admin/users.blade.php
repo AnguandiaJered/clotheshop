@@ -62,15 +62,6 @@
                                                         <label for="password">Entré le password</label>
                                                         <input type="password" class="form-control" name='password' required />
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="match_id">selectionner le privilège</label>
-                                                        <select class="form-control" name="role_id">
-                                                            <option selected="">Choose...</option>
-                                                            @foreach ($role as $item)
-                                                            <option value="{{$item->id}}">{{$item->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -98,8 +89,6 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone number</th>
-                                            <!-- <th>Password</th> -->
-                                            <th>Privilège</th>
                                             <th>Active</th>
                                             <th>Verified</th>
                                             <th>Action</th>
@@ -110,8 +99,6 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone number</th>
-                                            <!-- <th>Password</th> -->
-                                            <th>Privilège</th>
                                             <th>Active</th>
                                             <th>Verified</th>
                                             <th>Action</th>
@@ -147,15 +134,6 @@
                                                                     <div class="form-group">
                                                                         <label for="password">Entré le password</label>
                                                                         <input type="password" class="form-control" name='password' value="{{$items->password}}" required />
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="match_id">selectionner le privilège</label>
-                                                                        <select class="form-control" name="role_id">
-                                                                            <option selected="">Choose...</option>
-                                                                            @foreach ($role as $item)
-                                                                            <option value="{{$items->role_id}}">{{$item->name}}</option>
-                                                                            @endforeach
-                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
