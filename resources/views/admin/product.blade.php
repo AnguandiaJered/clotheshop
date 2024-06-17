@@ -90,7 +90,7 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="telephone">Entré la description</label>
-                                                        <textarea name="description" id="" cols="30" rows="5" class="form-control"></textarea>
+                                                        <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
                                                     </div>
                                                 </div>
                                             </div>

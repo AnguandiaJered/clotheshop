@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\Categorie;
 use Illuminate\Support\Facades\Storage;
+use App\Traits\{ JsonResponseTrait };
 
 class ProductController extends Controller
 {
@@ -68,6 +69,8 @@ class ProductController extends Controller
             $product->slug = $request->input('slug');
             $product->size = $request->input('size');
             $product->save();
+
+            dump($product);
         }
         return redirect(route('product.index'))->with([
             'message' => 'Successfully saved.!',
